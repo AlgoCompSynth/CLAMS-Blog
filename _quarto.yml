@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "CLAMS-Blog"
+  title: "Command Line Algorithmic Music System (CLAMS)"
   navbar:
     right:
       - about.qmd

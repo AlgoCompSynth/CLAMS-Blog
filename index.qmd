@@ -1,5 +1,5 @@
 ---
-title: "CLAMS-Blog"
+title: "Command Line Algorithmic Music System (CLAMS)"
 listing:
   contents: posts
   sort: "date desc"
