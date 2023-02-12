@@ -2,7 +2,20 @@
 title: "Welcome To the CLAMS Blog"
 author: "M. Edward (Ed) Borasky"
 date: "2023-02-11"
-categories: [news, microcontrollers, live-coding, embedded-systems, forth, digital-signal-processing, algorithmic-composition, algorave, raspberry-pi-pico, zeptoforth ]
+categories: [news, microcontrollers, live-coding, embedded-systems, forth, digital-signal-processing, algorithmic-composition, algorave, raspberry-pi-pico, zeptoforth]
+filters:
+  - social-share
+share:
+  permalink: "https://algocompsynth.github.io/CLAMS-Blog/posts/welcome/"
+  description: "Welcome To the CLAMS Blog"
+  twitter: false
+  facebook: false
+  reddit: false
+  stumble: false
+  tumblr: false
+  linkedin: true
+  email: false
+  mastodon: true
 ---
 
 This is the first post in a Quarto blog. Welcome!
