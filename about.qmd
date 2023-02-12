@@ -1,19 +1,24 @@
 ---
-title: "About"
+title: "About Me"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - text: Bandcamp
+      href: https://algocompsynth.bandcamp.com/
+    - icon: github
+      text: GitHub
+      href: https://github.com/AlgoCompSynth/CLAMS
+    - icon: mastodon
+      text: Mastodon
+      href: https://ravenation.club/@AlgoCompSynth
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+      href: https://www.linkedin.com/in/znmeb/
 ---
 
-About this blog
+> "Remember, if you're traveling to Bactria, Hump Day is Tuesday and Thursday" \~ M. Edward (Ed) Borasky
+
+You can find out more than you ever wanted to know about me on [Bandcamp](https://algocompsynth.bandcamp.com/ "AlgoCompSynth by znmeb on Bandcamp"), [LinkedIn](https://www.linkedin.com/in/znmeb/ "My LinkedIn Profile") and [Mastodon](https://ravenation.club/@AlgoCompSynth "My Mastodon Profile"). But briefly, I'm a retired scientific applications programmer with a near-life-long obsession with computer music - algorithmic composition and digital signal processing - and older forms of electronic music - [*musique concrète*](https://en.wikipedia.org/wiki/Musique_concr%C3%A8te "Musique concrète on Wikipedia"), East and West Coast analog synthesizers, and historic instruments like the [Telharmonium](https://en.wikipedia.org/wiki/Telharmonium "Telharmonium"), [Trautonium](https://en.wikipedia.org/wiki/Trautonium "Trautonium on Wikipedia"), [Theremin](https://en.wikipedia.org/wiki/Theremin "Theremin on Wikipedia"), and the [Ondes Martenot](https://en.wikipedia.org/wiki/Ondes_Martenot "Ondes Martenot on Wikipedia").
+
+My other obsession, a bit more recent, is [microtonal music](https://en.wikipedia.org/wiki/Microtonal_music "Microtonal Music on Wikipedia"), especially music based on the theories of [Erv Wilson](https://en.wikipedia.org/wiki/Erv_Wilson "Erv Wilson on Wikipedia"). That's a large enough obsession that it deserves its own project: [Eikosany](https://algocompsynth.github.io/eikosany/ "Eikosany R Package"). But don't worry - CLAMS will also be able to create microtonal music.

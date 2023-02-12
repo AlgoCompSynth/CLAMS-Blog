@@ -1,0 +1,26 @@
+---
+title: "About CLAMS"
+bibliography: CLAMS.bib
+about:
+  template: marquee
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/AlgoCompSynth/CLAMS
+---
+
+> "I've never seen a happy clam. In fact, most of them were really steamed." \~ M. Edward (Ed) Borasky
+
+## CLAMS overview
+
+CLAMS is a text-based interactive environment for composing and performing music on a [Raspberry Pi Pico H microcontroller board](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-and-pico-h "Raspberry Pi Pico Website"). This board costs about \$5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about \$18US as of 2023-02-11.
+
+CLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.
+
+The CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of [ChucK](https://chuck.stanford.edu/ "ChucK Home Page") [@salazar2014programming] - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for [live coding / algorave](https://github.com/toplap/awesome-livecoding "Awesome Live Coding :ist on GitHub") performances.
+
+CLAMS is based on [Travis Bemann's *zeptoforth*](https://github.com/tabemann/zeptoforth "zeptoforth on GitHub"). If you're new to Forth and want to get started, @brodie2022 is the place to start. There are a few PDF versions of *Starting Forth* on the web, but many are older versions. The one you want is the web version at <https://www.forth.com/starting-forth/0-starting-forth/>.
+
+If you're already a Forth programmer, the *zeptoforth* words are documented at [https://github.com/tabemann/zeptoforth/tree/master/html (HTML)](https://github.com/tabemann/zeptoforth/tree/master/html "zeptoforth HTML word list") and [https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB)](https://github.com/tabemann/zeptoforth/tree/master/epub "zeptoforth EPUB word list"). For more details, see the [*zeptoforth* wiki](https://github.com/tabemann/zeptoforth/wiki "zeptoforth wiki").
+
+## References

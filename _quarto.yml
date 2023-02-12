@@ -8,6 +8,7 @@ website:
   title: "Command Line Algorithmic Music System (CLAMS)"
   navbar:
     right:
+      - about-CLAMS.qmd
       - about.qmd
       - icon: github
         href: https://github.com/AlgoCompSynth/CLAMS

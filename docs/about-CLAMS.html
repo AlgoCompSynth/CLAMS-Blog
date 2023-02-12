@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Command Line Algorithmic Music System (CLAMS) - About Me</title>
+<title>Command Line Algorithmic Music System (CLAMS) - About CLAMS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -79,10 +98,10 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about-CLAMS.html">About CLAMS</a>
+    <a class="nav-link active" href="./about-CLAMS.html" aria-current="page">About CLAMS</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About Me</a>
+    <a class="nav-link" href="./about.html">About Me</a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/AlgoCompSynth/CLAMS"><i class="bi bi-github" role="img">
@@ -111,44 +130,50 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-marquee">
+  <div class="about-image-container">
+  </div>
+  <div class="about-contents">
+    <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About Me</h1>
+<h1 class="title">About CLAMS</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
-</header>
-    <div class="about-links">
-  <a href="https://algocompsynth.bandcamp.com/" class="about-link">
-     <span class="about-link-text">Bandcamp</span>
-  </a>
+</header> <main class="content" id="quarto-document-content">
+<blockquote class="blockquote">
+<p>“I’ve never seen a happy clam. In fact, most of them were really steamed.” ~ M. Edward (Ed) Borasky</p>
+</blockquote>
+<section id="clams-overview" class="level2">
+<h2 data-anchor-id="clams-overview">CLAMS overview</h2>
+<p>CLAMS is a text-based interactive environment for composing and performing music on a <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-and-pico-h" title="Raspberry Pi Pico Website">Raspberry Pi Pico H microcontroller board</a>. This board costs about $5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about $18US as of 2023-02-11.</p>
+<p>CLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.</p>
+<p>The CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of <a href="https://chuck.stanford.edu/" title="ChucK Home Page">ChucK</a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for <a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding :ist on GitHub">live coding / algorave</a> performances.</p>
+<p>CLAMS is based on <a href="https://github.com/tabemann/zeptoforth" title="zeptoforth on GitHub">Travis Bemann’s <em>zeptoforth</em></a>. If you’re new to Forth and want to get started, <span class="citation" data-cites="brodie2022">Brodie (<a href="#ref-brodie2022" role="doc-biblioref">2022</a>)</span> is the place to start. There are a few PDF versions of <em>Starting Forth</em> on the web, but many are older versions. The one you want is the web version at <a href="https://www.forth.com/starting-forth/0-starting-forth/" class="uri">https://www.forth.com/starting-forth/0-starting-forth/</a>.</p>
+<p>If you’re already a Forth programmer, the <em>zeptoforth</em> words are documented at <a href="https://github.com/tabemann/zeptoforth/tree/master/html" title="zeptoforth HTML word list">https://github.com/tabemann/zeptoforth/tree/master/html (HTML)</a> and <a href="https://github.com/tabemann/zeptoforth/tree/master/epub" title="zeptoforth EPUB word list">https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB)</a>. For more details, see the <a href="https://github.com/tabemann/zeptoforth/wiki" title="zeptoforth wiki"><em>zeptoforth</em> wiki</a>.</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-brodie2022" class="csl-entry" role="doc-biblioentry">
+Brodie, Leo. 2022. <span>“Starting Forth.”</span> FORTH, Inc. <a href="https://www.forth.com/starting-forth/0-starting-forth/">https://www.forth.com/starting-forth/0-starting-forth/</a>.
+</div>
+<div id="ref-salazar2014programming" class="csl-entry" role="doc-biblioentry">
+Salazar, S., A. Kapur, G. Wang, and P. Cook. 2014. <em>Programming for Musicians and Digital Artists: Creating Music with ChucK</em>. Manning. <a href="https://books.google.com/books?id=YzkzEAAAQBAJ">https://books.google.com/books?id=YzkzEAAAQBAJ</a>.
+</div>
+</div></section></div></main> 
+    <div class="about-footer"><div class="about-links">
   <a href="https://github.com/AlgoCompSynth/CLAMS" class="about-link">
     <i class="bi bi-github"></i>
      <span class="about-link-text">GitHub</span>
   </a>
-  <a href="https://ravenation.club/@AlgoCompSynth" class="about-link">
-    <i class="bi bi-mastodon"></i>
-     <span class="about-link-text">Mastodon</span>
-  </a>
-  <a href="https://www.linkedin.com/in/znmeb/" class="about-link">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
+</div>
 </div>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<blockquote class="blockquote">
-<p>“Remember, if you’re traveling to Bactria, Hump Day is Tuesday and Thursday” ~ M. Edward (Ed) Borasky</p>
-</blockquote>
-<p>You can find out more than you ever wanted to know about me on <a href="https://algocompsynth.bandcamp.com/" title="AlgoCompSynth by znmeb on Bandcamp">Bandcamp</a>, <a href="https://www.linkedin.com/in/znmeb/" title="My LinkedIn Profile">LinkedIn</a> and <a href="https://ravenation.club/@AlgoCompSynth" title="My Mastodon Profile">Mastodon</a>. But briefly, I’m a retired scientific applications programmer with a near-life-long obsession with computer music - algorithmic composition and digital signal processing - and older forms of electronic music - <a href="https://en.wikipedia.org/wiki/Musique_concr%C3%A8te" title="Musique concrète on Wikipedia"><em>musique concrète</em></a>, East and West Coast analog synthesizers, and historic instruments like the <a href="https://en.wikipedia.org/wiki/Telharmonium" title="Telharmonium">Telharmonium</a>, <a href="https://en.wikipedia.org/wiki/Trautonium" title="Trautonium on Wikipedia">Trautonium</a>, <a href="https://en.wikipedia.org/wiki/Theremin" title="Theremin on Wikipedia">Theremin</a>, and the <a href="https://en.wikipedia.org/wiki/Ondes_Martenot" title="Ondes Martenot on Wikipedia">Ondes Martenot</a>.</p>
-<p>My other obsession, a bit more recent, is <a href="https://en.wikipedia.org/wiki/Microtonal_music" title="Microtonal Music on Wikipedia">microtonal music</a>, especially music based on the theories of <a href="https://en.wikipedia.org/wiki/Erv_Wilson" title="Erv Wilson on Wikipedia">Erv Wilson</a>. That’s a large enough obsession that it deserves its own project: <a href="https://algocompsynth.github.io/eikosany/" title="Eikosany R Package">Eikosany</a>. But don’t worry - CLAMS will also be able to create microtonal music.</p>
-
-
-</main></div>
 </div>
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
