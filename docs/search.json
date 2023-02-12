@@ -25,13 +25,13 @@
     "href": "index.html",
     "title": "Command Line Algorithmic Music System (CLAMS)",
     "section": "",
-    "text": "news\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 11, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
+    "text": "news\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To the CLAMS Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!"
+    "text": "I’m not really looking for contributions at the moment, but if you have ideas that you think might be useful, see the contributing guide. This project is in its very early stages. I’ve been researching various components of what I want but the big one only clicked into place last week. If you want to chat, the best place to reach me online is Mastodon. This blog does not have comments and never will.\nThere is a project board at https://github.com/orgs/AlgoCompSynth/projects/8 if you want to follow along. The first order of business is to get the hardware set up and playing a 440 Hz sine wave - this is the “Hello, world” of micro-controller audio projects and the worst case is that CLAMS becomes another guitar tuner. I’ll be posting pictures here, and maybe an MP3 of the audio.\nAt this point I believe my development host will be an Acer Chromebook Spin 714. Chromebooks have come a long way since Google gave me a developer preview of the original “Mario” Chromebook in late 2010. They run Android apps, Chrome web apps, and there’s an integrated virtual machine that runs Debian “bullseye” in an LXD container.\nI hope to have a minimum viable product to show by the middle of March. I at least need to have something that I can tweak by then because my other hobby, basketball analytics, will be kicking in with March Madness. ;-)"
   }
 ]
