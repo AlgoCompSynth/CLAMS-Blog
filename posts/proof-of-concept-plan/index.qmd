@@ -1,0 +1,153 @@
+---
+title: "A Man, A Plan, A Clam ... er ..."
+author: "M. Edward (Ed) Borasky"
+date: "2023-02-25"
+categories: [news, project-management, microcontrollers, embedded-systems, forth, raspberry-pi-pico, zeptoforth]
+draft: true
+bibliography: ../../CLAMS.bib
+filters:
+  - social-share
+share:
+  permalink: "https://algocompsynth.github.io/CLAMS-Blog/posts/proof-of-concept-plan/"
+  description: "CLAMS project plan sort-of"
+  twitter: false
+  facebook: false
+  reddit: false
+  stumble: false
+  tumblr: false
+  linkedin: true
+  email: false
+  mastodon: true
+---
+
+> "In the beginning, there was a plan,
+>
+> And then came the assumptions,
+>
+> And the assumptions were without form,
+>
+> And the plan without substance,
+>
+> And the darkness was upon the face of the workers,
+>
+> And they spoke among themselves saying, ..."
+>
+> \- unknown NSFW cubicle worker
+
+## Overview
+
+### CLAMS goal
+
+-   algorithmic music composition and performance ...
+-   live ...
+-   in real time ...
+-   on a Raspberry Pi Pico!
+
+### CLAMS architecture
+
+CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as [`ChucK`](https://chuck.cs.princeton.edu/ "CChucK website") [@salazar2014programming] semantics with Forth syntax. There is a single syntax and semantics to describe every part of the music creation process.
+
+CLAMS consists of three sets of Forth words: - low-level words: real time digital synthesis and microcontroller audio - mid-level words: signal flow graph construction - high-level words: human interface for composition and live performance
+
+### Inspirations from Forth
+
+Although `ChucK` is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:
+
+-   Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on [GitHub](https://github.com/philburk/hmsl.git) at <https://github.com/philburk/hmsl.git>.
+-   FORMULA - FORth MUsic LAnguage. Formula [@andersonkiuvila1989, \@andersonkiuvila1991] was a system designed for improvisation in real time. FORMULA has a successor written in Python called [NUMULA](https://github.com/davidpanderson/Numula.git), which is documented at <https://github.com/davidpanderson/Numula/wiki>.
+
+### More about live coding
+
+You can find more about live coding from:
+
+-   *Live Coding: A User's Manual* [@blackwell2022live]
+-   [The **T**emporal **O**rganisation for the **P**roliferation of **L**ive **A**udioVisual **P**rogramming (TOPLAP) home page](https://toplap.org/ "TOPLAP home page")
+-   [The TOPLAP Wiki](https://toplap.org/wiki/Main_Page "The TOPLAP Wiki")
+-   [All things live coding (Awesome Live Coding)](https://github.com/toplap/awesome-livecoding "Awesome Live Coding")
+
+## Road Map
+
+I have a preliminary road map to share with you. The plan is ***very*** preliminary for two reasons:
+
+1.  I have two other projects that compete with this one for attention. Normally my optimum active project count is two, since it's rare that both will be blocked at the same time.
+2.  This project involves hardware, and component availability is challenging.
+
+This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is not the starting point for CLAMS.
+
+I'm not a hardware hacker by any stretch of the imagination. I don't even have a soldering station! CLAMS is open source. The code is licensed GPL-3.
+
+The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. if someone wants to build these and sell copies, that's fine with me as long as they give me credit and give their users what I'm providing them here.
+
+## Hardware for the proof of concept
+
+### Raspberry Pi Pico H and Raspberry Pi Debug Probe
+
+First of all you will need a Raspberry Pi Pico H. This is the Raspberry Pi branded board with headers and a serial wire debug (SWD) connector pre-soldered onto the board. Here's the link for the store locator:
+
+<https://www.raspberrypi.com/products/raspberry-pi-pico/>
+
+***Important! You need the one without wireless and with headers!***
+
+You will also need a Raspberry Pi Debug Probe. Here's the store locator link:
+
+<https://www.raspberrypi.com/products/debug-probe/>
+
+This is newly-announced and I don't know about availablilty. I have four on order that I expect to be here next week. If you can't get them, there is a workaround, which I'll publish in a separate post.
+
+The reason you need this is that `zeptoforth` communicates with you via a serial connection, not USB. The debug probe connects to USB on one end and to the Raspberry Pi Pico on the other end and converts the serial data to USB signals a host computer recognizes as a serial port.
+
+### Pimoroni Pico Audio Pack and (Pico Omnibus or Pico Decker)
+
+I am testing two audio add-ons for CLAMS. The first one is the Pimoroni Pico Audio Pack:
+
+[Pimoroni Pico Audio Pack](https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971 "Pimoroni Pico Audio Pack")
+
+The store is in the United Kingdom but I've had good luck with their shipping.
+
+Because the debug probe needs to connect directly to the serial pins on the Pico, you will also need either a [Pico Omnibus](https://shop.pimoroni.com/products/pico-omnibus "Pico Omnibus web page") or a [Pico Decker](https://shop.pimoroni.com/products/pico-decker "Pico Decker web page").
+
+The Omnibus has two expansion slots. The audio pack will take up one, and you will need to leave the other one unused. That's where you'll connect the debug probe to the Pico serial port pins. I'll post a picture as soon as the debug probes get here.
+
+The Decker has four expansion slots. The audio pack takes up one and you need to reserve one for the debug probe connections. But you can put two other packs on the remaining slots, so feel free to explore the Pico universe!
+
+### Waveshare Electronics Audio Expansion Module for Raspberry Pi Pico
+
+The second audio add-on I'm testing is the [Waveshare Electronics Audio Expansion Module.](https://www.waveshare.com/pico-audio.htm "Waveshare Electronics Audio Expansion Module. web page") The store is in China, so availability may be a challenge. I have some on order, so I can't give much more data.
+
+The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the interface with the Pico leaves a full set of open male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe.
+
+## Software for the proof of concept
+
+The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running `zeptoforth` and the Pimoroni audio pack. Part of this goal is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico. I want to know how much audio I can make in real time with 24-bit samples at 48kHz with a single Pico.
+
+The planned audio software includes:
+
+-   audio hardware interface words
+
+-   a direct sound synthesis signal generator
+
+## Target date for proof of concept
+
+I'm calling the proof of concept release v0.2.5. I've set the due date to March 17, 2023. I hope I'll have Waveshare devices here but the software probably won't be done by then.
+
+Once I know what the audio constraints on a single Pico are, I'll re-scope the project. I'm not pre-disposed against a multiple-Pico architecture right now but I'd strongly prefer a one-to-one ratio of performers to Picos. At the current hardware prices quartets or maybe even octets of CLAMS rigs are quite feasible.
+
+## But here's what I plan to build after the proof of concept ...
+
+### First release (v0.5.0) - Software (low-level infrastructure)
+
+-   all real-time synthesis / audio I/O words working
+-   stretch goal is all synthesis algorithms in Csound 7
+    -   <https://flossmanual.csound.com/>
+-   target date: 2023-05-12
+
+### Second release (v0.7.5) (mid-level user interface)
+
+-   signal flow graph interpreter
+-   target date: 2023-06-16
+
+### Full release (v0.9.0+) (high-level user interface)
+
+-   full composition and live performance user interface
+-   stretch goal: port to Electro-Smith Daisy
+-   target date: 2023-07-14

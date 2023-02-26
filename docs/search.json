@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "“Remember, if you’re traveling to Bactria, Hump Day is Tuesday and Thursday” ~ M. Edward (Ed) Borasky\n\nYou can find out more than you ever wanted to know about me on Bandcamp, LinkedIn and Mastodon. But briefly, I’m a retired scientific applications programmer with a near-life-long obsession with computer music - algorithmic composition and digital signal processing - and older forms of electronic music - musique concrète, East and West Coast analog synthesizers, and historic instruments like the Telharmonium, Trautonium, Theremin, and the Ondes Martenot.\nMy other obsession, a bit more recent, is microtonal music, especially music based on the theories of Erv Wilson. That’s a large enough obsession that it deserves its own project: Eikosany. But don’t worry - CLAMS will also be able to create microtonal music."
+  },
+  {
     "objectID": "about-CLAMS.html",
     "href": "about-CLAMS.html",
     "title": "About CLAMS",
@@ -14,24 +21,17 @@
     "text": "CLAMS overview\nCLAMS is a text-based interactive environment for composing and performing music on a Raspberry Pi Pico H microcontroller board. This board costs about $5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about $18US as of 2023-02-11.\nCLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.\nThe CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of ChucK (Salazar et al. 2014) - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for live coding / algorave performances.\nCLAMS is based on Travis Bemann’s zeptoforth. If you’re new to Forth and want to get started, Brodie (2022) is the place to start. There are a few PDF versions of Starting Forth on the web, but many are older versions. The one you want is the web version at https://www.forth.com/starting-forth/0-starting-forth/.\nIf you’re already a Forth programmer, the zeptoforth words are documented at https://github.com/tabemann/zeptoforth/tree/master/html (HTML) and https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB). For more details, see the zeptoforth wiki."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To the CLAMS Blog",
     "section": "",
-    "text": "You can find out more than you ever wanted to know about me on Bandcamp, LinkedIn and Mastodon. But briefly, I’m a retired scientific applications programmer with a near-life-long obsession with computer music - algorithmic composition and digital signal processing - and older forms of electronic music - musique concrète, East and West Coast analog synthesizers, and historic instruments like the Telharmonium, Trautonium, Theremin, and the Ondes Martenot.\nMy other obsession, a bit more recent, is microtonal music, especially music based on the theories of Erv Wilson. That’s a large enough obsession that it deserves its own project: Eikosany. But don’t worry - CLAMS will also be able to create microtonal music."
+    "text": "Welcome to the CLAMS blog! This is where I’ll be thinking out loud about the project and sharing progress. There will be formal documentation as well, but I haven’t gotten far enough into the project to lay that out in any great detail.\nI’m not really looking for contributions at the moment, but if you have ideas that you think might be useful, see the contributing guide. This project is in its very early stages. I’ve been researching various components of what I want but the big one only clicked into place last week. If you want to chat, the best place to reach me online is Mastodon. This blog does not have comments and never will.\nThere is a project board at https://github.com/orgs/AlgoCompSynth/projects/8 if you want to follow along. The first order of business is to get the hardware set up and playing a 440 Hz sine wave - this is the “Hello, world” of micro-controller audio projects and the worst case is that CLAMS becomes another guitar tuner. I’ll be posting pictures here, and maybe an MP3 of the audio.\nAt this point I believe my development host will be an Acer Chromebook Spin 714. Chromebooks have come a long way since Google gave me a developer preview of the original “Mario” Chromebook in late 2010. They run Android apps, Chrome web apps, and there’s an integrated virtual machine that runs Debian “bullseye” in an LXD container.\nI hope to have a minimum viable product to show by the middle of March. I at least need to have something that I can tweak by then because my other hobby, basketball analytics, will be kicking in with March Madness. ;-)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Command Line Algorithmic Music System (CLAMS)",
     "section": "",
-    "text": "news\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To the CLAMS Blog",
-    "section": "",
-    "text": "I’m not really looking for contributions at the moment, but if you have ideas that you think might be useful, see the contributing guide. This project is in its very early stages. I’ve been researching various components of what I want but the big one only clicked into place last week. If you want to chat, the best place to reach me online is Mastodon. This blog does not have comments and never will.\nThere is a project board at https://github.com/orgs/AlgoCompSynth/projects/8 if you want to follow along. The first order of business is to get the hardware set up and playing a 440 Hz sine wave - this is the “Hello, world” of micro-controller audio projects and the worst case is that CLAMS becomes another guitar tuner. I’ll be posting pictures here, and maybe an MP3 of the audio.\nAt this point I believe my development host will be an Acer Chromebook Spin 714. Chromebooks have come a long way since Google gave me a developer preview of the original “Mario” Chromebook in late 2010. They run Android apps, Chrome web apps, and there’s an integrated virtual machine that runs Debian “bullseye” in an LXD container.\nI hope to have a minimum viable product to show by the middle of March. I at least need to have something that I can tweak by then because my other hobby, basketball analytics, will be kicking in with March Madness. ;-)"
+    "text": "Welcome To the CLAMS Blog\n\n\n\n\n\n\n\nnews\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
   }
 ]

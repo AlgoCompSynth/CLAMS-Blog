@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="M. Edward (Ed) Borasky">
+<meta name="dcterms.date" content="2023-02-25">
+
+<title>Command Line Algorithmic Music System (CLAMS) - A Man, A Plan, A Clam … er …</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Command Line Algorithmic Music System (CLAMS)</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about-CLAMS.html">
+ <span class="menu-text">About CLAMS</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/AlgoCompSynth/CLAMS"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://ravenation.club/@AlgoCompSynth"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/znmeb/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">A Man, A Plan, A Clam … er …</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">project-management</div>
+                <div class="quarto-category">microcontrollers</div>
+                <div class="quarto-category">embedded-systems</div>
+                <div class="quarto-category">forth</div>
+                <div class="quarto-category">raspberry-pi-pico</div>
+                <div class="quarto-category">zeptoforth</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>M. Edward (Ed) Borasky </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 25, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<blockquote class="blockquote">
+<p>“In the beginning, there was a plan,</p>
+<p>And then came the assumptions,</p>
+<p>And the assumptions were without form,</p>
+<p>And the plan without substance,</p>
+<p>And the darkness was upon the face of the workers,</p>
+<p>And they spoke among themselves saying, …”</p>
+<p>- unknown NSFW cubicle worker</p>
+</blockquote>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="clams-goal" class="level3">
+<h3 class="anchored" data-anchor-id="clams-goal">CLAMS goal</h3>
+<ul>
+<li>algorithmic music composition and performance …</li>
+<li>live …</li>
+<li>in real time …</li>
+<li>on a Raspberry Pi Pico!</li>
+</ul>
+</section>
+<section id="clams-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="clams-architecture">CLAMS architecture</h3>
+<p>CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as <a href="https://chuck.cs.princeton.edu/" title="CChucK website"><code>ChucK</code></a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> semantics with Forth syntax. There is a single syntax and semantics to describe every part of the music creation process.</p>
+<p>CLAMS consists of three sets of Forth words: - low-level words: real time digital synthesis and microcontroller audio - mid-level words: signal flow graph construction - high-level words: human interface for composition and live performance</p>
+</section>
+<section id="inspirations-from-forth" class="level3">
+<h3 class="anchored" data-anchor-id="inspirations-from-forth">Inspirations from Forth</h3>
+<p>Although <code>ChucK</code> is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:</p>
+<ul>
+<li>Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on <a href="https://github.com/philburk/hmsl.git">GitHub</a> at <a href="https://github.com/philburk/hmsl.git" class="uri">https://github.com/philburk/hmsl.git</a>.</li>
+<li>FORMULA - FORth MUsic LAnguage. Formula <span class="citation" data-cites="andersonkiuvila1989">(<a href="#ref-andersonkiuvila1989" role="doc-biblioref">Anderson and Kuivila 1989</a>, @andersonkiuvila1991)</span> was a system designed for improvisation in real time. FORMULA has a successor written in Python called <a href="https://github.com/davidpanderson/Numula.git">NUMULA</a>, which is documented at <a href="https://github.com/davidpanderson/Numula/wiki" class="uri">https://github.com/davidpanderson/Numula/wiki</a>.</li>
+</ul>
+</section>
+<section id="more-about-live-coding" class="level3">
+<h3 class="anchored" data-anchor-id="more-about-live-coding">More about live coding</h3>
+<p>You can find more about live coding from:</p>
+<ul>
+<li><em>Live Coding: A User’s Manual</em> <span class="citation" data-cites="blackwell2022live">(<a href="#ref-blackwell2022live" role="doc-biblioref">Blackwell et al. 2022</a>)</span></li>
+<li><a href="https://toplap.org/" title="TOPLAP home page">The <strong>T</strong>emporal <strong>O</strong>rganisation for the <strong>P</strong>roliferation of <strong>L</strong>ive <strong>A</strong>udioVisual <strong>P</strong>rogramming (TOPLAP) home page</a></li>
+<li><a href="https://toplap.org/wiki/Main_Page" title="The TOPLAP Wiki">The TOPLAP Wiki</a></li>
+<li><a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding">All things live coding (Awesome Live Coding)</a></li>
+</ul>
+</section>
+</section>
+<section id="road-map" class="level2">
+<h2 class="anchored" data-anchor-id="road-map">Road Map</h2>
+<p>I have a preliminary road map to share with you. The plan is <strong><em>very</em></strong> preliminary for two reasons:</p>
+<ol type="1">
+<li>I have two other projects that compete with this one for attention. Normally my optimum active project count is two, since it’s rare that both will be blocked at the same time.</li>
+<li>This project involves hardware, and component availability is challenging.</li>
+</ol>
+<p>This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is not the starting point for CLAMS.</p>
+<p>I’m not a hardware hacker by any stretch of the imagination. I don’t even have a soldering station! CLAMS is open source. The code is licensed GPL-3.</p>
+<p>The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. if someone wants to build these and sell copies, that’s fine with me as long as they give me credit and give their users what I’m providing them here.</p>
+</section>
+<section id="hardware-for-the-proof-of-concept" class="level2">
+<h2 class="anchored" data-anchor-id="hardware-for-the-proof-of-concept">Hardware for the proof of concept</h2>
+<section id="raspberry-pi-pico-h-and-raspberry-pi-debug-probe" class="level3">
+<h3 class="anchored" data-anchor-id="raspberry-pi-pico-h-and-raspberry-pi-debug-probe">Raspberry Pi Pico H and Raspberry Pi Debug Probe</h3>
+<p>First of all you will need a Raspberry Pi Pico H. This is the Raspberry Pi branded board with headers and a serial wire debug (SWD) connector pre-soldered onto the board. Here’s the link for the store locator:</p>
+<p><a href="https://www.raspberrypi.com/products/raspberry-pi-pico/" class="uri">https://www.raspberrypi.com/products/raspberry-pi-pico/</a></p>
+<p><strong><em>Important! You need the one without wireless and with headers!</em></strong></p>
+<p>You will also need a Raspberry Pi Debug Probe. Here’s the store locator link:</p>
+<p><a href="https://www.raspberrypi.com/products/debug-probe/" class="uri">https://www.raspberrypi.com/products/debug-probe/</a></p>
+<p>This is newly-announced and I don’t know about availablilty. I have four on order that I expect to be here next week. If you can’t get them, there is a workaround, which I’ll publish in a separate post.</p>
+<p>The reason you need this is that <code>zeptoforth</code> communicates with you via a serial connection, not USB. The debug probe connects to USB on one end and to the Raspberry Pi Pico on the other end and converts the serial data to USB signals a host computer recognizes as a serial port.</p>
+</section>
+<section id="pimoroni-pico-audio-pack-and-pico-omnibus-or-pico-decker" class="level3">
+<h3 class="anchored" data-anchor-id="pimoroni-pico-audio-pack-and-pico-omnibus-or-pico-decker">Pimoroni Pico Audio Pack and (Pico Omnibus or Pico Decker)</h3>
+<p>I am testing two audio add-ons for CLAMS. The first one is the Pimoroni Pico Audio Pack:</p>
+<p><a href="https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971" title="Pimoroni Pico Audio Pack">Pimoroni Pico Audio Pack</a></p>
+<p>The store is in the United Kingdom but I’ve had good luck with their shipping.</p>
+<p>Because the debug probe needs to connect directly to the serial pins on the Pico, you will also need either a <a href="https://shop.pimoroni.com/products/pico-omnibus" title="Pico Omnibus web page">Pico Omnibus</a> or a <a href="https://shop.pimoroni.com/products/pico-decker" title="Pico Decker web page">Pico Decker</a>.</p>
+<p>The Omnibus has two expansion slots. The audio pack will take up one, and you will need to leave the other one unused. That’s where you’ll connect the debug probe to the Pico serial port pins. I’ll post a picture as soon as the debug probes get here.</p>
+<p>The Decker has four expansion slots. The audio pack takes up one and you need to reserve one for the debug probe connections. But you can put two other packs on the remaining slots, so feel free to explore the Pico universe!</p>
+</section>
+<section id="waveshare-electronics-audio-expansion-module-for-raspberry-pi-pico" class="level3">
+<h3 class="anchored" data-anchor-id="waveshare-electronics-audio-expansion-module-for-raspberry-pi-pico">Waveshare Electronics Audio Expansion Module for Raspberry Pi Pico</h3>
+<p>The second audio add-on I’m testing is the <a href="https://www.waveshare.com/pico-audio.htm" title="Waveshare Electronics Audio Expansion Module. web page">Waveshare Electronics Audio Expansion Module.</a> The store is in China, so availability may be a challenge. I have some on order, so I can’t give much more data.</p>
+<p>The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the interface with the Pico leaves a full set of open male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe.</p>
+</section>
+</section>
+<section id="software-for-the-proof-of-concept" class="level2">
+<h2 class="anchored" data-anchor-id="software-for-the-proof-of-concept">Software for the proof of concept</h2>
+<p>The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running <code>zeptoforth</code> and the Pimoroni audio pack. Part of this goal is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico. I want to know how much audio I can make in real time with 24-bit samples at 48kHz with a single Pico.</p>
+<p>The planned audio software includes:</p>
+<ul>
+<li><p>audio hardware interface words</p></li>
+<li><p>a direct sound synthesis signal generator</p></li>
+</ul>
+</section>
+<section id="target-date-for-proof-of-concept" class="level2">
+<h2 class="anchored" data-anchor-id="target-date-for-proof-of-concept">Target date for proof of concept</h2>
+<p>I’m calling the proof of concept release v0.2.5. I’ve set the due date to March 17, 2023. I hope I’ll have Waveshare devices here but the software probably won’t be done by then.</p>
+<p>Once I know what the audio constraints on a single Pico are, I’ll re-scope the project. I’m not pre-disposed against a multiple-Pico architecture right now but I’d strongly prefer a one-to-one ratio of performers to Picos. At the current hardware prices quartets or maybe even octets of CLAMS rigs are quite feasible.</p>
+</section>
+<section id="but-heres-what-i-plan-to-build-after-the-proof-of-concept" class="level2">
+<h2 class="anchored" data-anchor-id="but-heres-what-i-plan-to-build-after-the-proof-of-concept">But here’s what I plan to build after the proof of concept …</h2>
+<section id="first-release-v0.5.0---software-low-level-infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="first-release-v0.5.0---software-low-level-infrastructure">First release (v0.5.0) - Software (low-level infrastructure)</h3>
+<ul>
+<li>all real-time synthesis / audio I/O words working</li>
+<li>stretch goal is all synthesis algorithms in Csound 7
+<ul>
+<li><a href="https://flossmanual.csound.com/" class="uri">https://flossmanual.csound.com/</a></li>
+</ul></li>
+<li>target date: 2023-05-12</li>
+</ul>
+</section>
+<section id="second-release-v0.7.5-mid-level-user-interface" class="level3">
+<h3 class="anchored" data-anchor-id="second-release-v0.7.5-mid-level-user-interface">Second release (v0.7.5) (mid-level user interface)</h3>
+<ul>
+<li>signal flow graph interpreter</li>
+<li>target date: 2023-06-16</li>
+</ul>
+</section>
+<section id="full-release-v0.9.0-high-level-user-interface" class="level3">
+<h3 class="anchored" data-anchor-id="full-release-v0.9.0-high-level-user-interface">Full release (v0.9.0+) (high-level user interface)</h3>
+<ul>
+<li>full composition and live performance user interface</li>
+<li>stretch goal: port to Electro-Smith Daisy</li>
+<li>target date: 2023-07-14</li>
+</ul>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-andersonkiuvila1989" class="csl-entry" role="doc-biblioentry">
+Anderson, David P., and Ron Kuivila. 1989. <span>“Continuous Abstractions for Discrete Event Languages.”</span> <em>Computer Music Journal</em> 13 (3): 11–23. <a href="http://www.jstor.org/stable/3680007">http://www.jstor.org/stable/3680007</a>.
+</div>
+<div id="ref-blackwell2022live" class="csl-entry" role="doc-biblioentry">
+Blackwell, A. F., E. Cocker, G. Cox, A. McLean, and T. Magnusson. 2022. <em>Live Coding: A User’s Manual</em>. Software Studies. MIT Press.
+</div>
+<div id="ref-salazar2014programming" class="csl-entry" role="doc-biblioentry">
+Salazar, S., A. Kapur, G. Wang, and P. Cook. 2014. <em>Programming for Musicians and Digital Artists: Creating Music with ChucK</em>. Manning.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://www.linkedin.com/shareArticle?url=https://algocompsynth.github.io/CLAMS-Blog/posts/proof-of-concept-plan/&amp;title=CLAMS project plan sort-of" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a><a href="javascript:void(0);" onclick="var mastodon_instance=prompt('Mastodon Instance / Server Name?'); if(typeof mastodon_instance==='string' &amp;&amp; mastodon_instance.length){this.href='https://'+mastodon_instance+'/share?text=CLAMS project plan sort-of https://algocompsynth.github.io/CLAMS-Blog/posts/proof-of-concept-plan/'}else{return false;}" target="_blank" class="mastodon"><i class="fa-brands fa-mastodon fa-fw fa-lg"></i></a></div></div>
+
+
+
+</body></html>
