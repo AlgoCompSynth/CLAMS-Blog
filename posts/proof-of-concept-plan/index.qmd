@@ -1,9 +1,9 @@
 ---
 title: "A Man, A Plan, A Clam ... er ..."
 author: "M. Edward (Ed) Borasky"
-date: "2023-02-25"
-categories: [news, project-management, microcontrollers, embedded-systems, forth, raspberry-pi-pico, zeptoforth]
-draft: true
+date: "2023-02-26"
+categories: [ChucK, digital-audio, direct-digital-synthesis, embedded-systems, FORMULA, forth, HMSL, live-coding, microcontrollers, news, NUMULA, pimoroni, project-management, raspberry-pi-debug-probe, raspberry-pi-pico, waveshare-electronics, zeptoforth]
+draft: false
 bibliography: ../../CLAMS.bib
 filters:
   - social-share
@@ -20,19 +20,15 @@ share:
   mastodon: true
 ---
 
-> "In the beginning, there was a plan,
+>     "In the beginning, there was a plan,
+>     And then came the assumptions,
+>     And the assumptions were without form,
+>     And the plan without substance,
 >
-> And then came the assumptions,
+>     "And the darkness was upon the face of the workers,
+>     And they spoke among themselves saying, ..."
 >
-> And the assumptions were without form,
->
-> And the plan without substance,
->
-> And the darkness was upon the face of the workers,
->
-> And they spoke among themselves saying, ..."
->
-> \- unknown NSFW cubicle worker
+>     - unknown NSFW cubicle worker
 
 ## Overview
 
@@ -45,38 +41,51 @@ share:
 
 ### CLAMS architecture
 
-CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as [`ChucK`](https://chuck.cs.princeton.edu/ "CChucK website") [@salazar2014programming] semantics with Forth syntax. There is a single syntax and semantics to describe every part of the music creation process.
+CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as [`ChucK`](https://chuck.cs.princeton.edu/ "ChucK website") [@salazar2014programming] semantics with Forth syntax. ***CLAMS will have a single syntax and semantics to describe every part of the music creation process:***
 
-CLAMS consists of three sets of Forth words: - low-level words: real time digital synthesis and microcontroller audio - mid-level words: signal flow graph construction - high-level words: human interface for composition and live performance
+-   the unit generators that make and process digital audio,
+
+-   the signal flow graphs that connect the unit generators, and
+
+-   the score a composer writes and the gestures a performer makes.
+
+Thus, CLAMS consists of three sets of Forth words:
+
+-   low-level words: real time digital synthesis and microcontroller audio,
+
+-   mid-level words: signal flow graph construction
+
+-   high-level words: human interface for composition and live performance
 
 ### Inspirations from Forth
 
 Although `ChucK` is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:
 
--   Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on [GitHub](https://github.com/philburk/hmsl.git) at <https://github.com/philburk/hmsl.git>.
--   FORMULA - FORth MUsic LAnguage. Formula [@andersonkiuvila1989, \@andersonkiuvila1991] was a system designed for improvisation in real time. FORMULA has a successor written in Python called [NUMULA](https://github.com/davidpanderson/Numula.git), which is documented at <https://github.com/davidpanderson/Numula/wiki>.
+-   Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on [GitHub](https://github.com/philburk/hmsl.git "HMSL on GitHub") at <https://github.com/philburk/hmsl.git>.
+-   FORMULA - FORth MUsic LAnguage. Formula [@andersonkiuvila1989], [@andersonkiuvila1991] was a system designed for improvisation in real time. FORMULA has a successor written in Python called [NUMULA](https://github.com/davidpanderson/Numula.git "NUMULA on GitHub"), which is documented at <https://github.com/davidpanderson/Numula/wiki>.
 
 ### More about live coding
 
-You can find more about live coding from:
+You can find more about live coding from
 
--   *Live Coding: A User's Manual* [@blackwell2022live]
--   [The **T**emporal **O**rganisation for the **P**roliferation of **L**ive **A**udioVisual **P**rogramming (TOPLAP) home page](https://toplap.org/ "TOPLAP home page")
--   [The TOPLAP Wiki](https://toplap.org/wiki/Main_Page "The TOPLAP Wiki")
--   [All things live coding (Awesome Live Coding)](https://github.com/toplap/awesome-livecoding "Awesome Live Coding")
+-   *Live Coding: A User's Manual* [@blackwell2022live],
+-   [The **T**emporal **O**rganisation for the **P**roliferation of **L**ive **A**udioVisual **P**rogramming (TOPLAP) home page](https://toplap.org/ "TOPLAP home page"),
+-   [The TOPLAP Wiki](https://toplap.org/wiki/Main_Page "The TOPLAP Wiki"),
+-   [The TOPLAP Manifesto](https://toplap.org/wiki/ManifestoDraft "The TOPLAP Manifesto"): "Obscurantism is dangerous. Show us your screens." and
+-   [All things live coding (Awesome Live Coding)](https://github.com/toplap/awesome-livecoding "Awesome Live Coding on GitHub").
 
-## Road Map
+See, for example [TOPLAP Historical Performances, 80s FORTH era](https://toplap.org/wiki/HistoricalPerformances "TOPLAP Historical Performances, 80s FORTH era") for some references to HMSL and to Ron Kuivila.
+
+## Building CLAMS - Preliminary Road Map
 
 I have a preliminary road map to share with you. The plan is ***very*** preliminary for two reasons:
 
 1.  I have two other projects that compete with this one for attention. Normally my optimum active project count is two, since it's rare that both will be blocked at the same time.
-2.  This project involves hardware, and component availability is challenging.
+2.  This project involves hardware, and component availability is ... well ... challenging.
 
-This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is not the starting point for CLAMS.
+This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is ***not*** the starting point for CLAMS.
 
-I'm not a hardware hacker by any stretch of the imagination. I don't even have a soldering station! CLAMS is open source. The code is licensed GPL-3.
-
-The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. if someone wants to build these and sell copies, that's fine with me as long as they give me credit and give their users what I'm providing them here.
+I'm not a hardware hacker by any stretch of the imagination. I don't even have a soldering station! CLAMS is open source. The code is licensed GPL-3. The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. If someone wants to build CLAMS gizmos and sell them, that's fine with me as long as they give me credit and give their users a copy of what I'm providing with CLAMS.
 
 ## Hardware for the proof of concept
 
@@ -94,13 +103,13 @@ You will also need a Raspberry Pi Debug Probe. Here's the store locator link:
 
 This is newly-announced and I don't know about availablilty. I have four on order that I expect to be here next week. If you can't get them, there is a workaround, which I'll publish in a separate post.
 
-The reason you need this is that `zeptoforth` communicates with you via a serial connection, not USB. The debug probe connects to USB on one end and to the Raspberry Pi Pico on the other end and converts the serial data to USB signals a host computer recognizes as a serial port.
+The reason you need this is that `zeptoforth` communicates with a host computer via a serial connection, not USB. The debug probe connects a USB port on the host computer with a Raspberry Pi Pico serial port and translates the signals. The host computer sees a serial port over USB.
 
 ### Pimoroni Pico Audio Pack and (Pico Omnibus or Pico Decker)
 
-I am testing two audio add-ons for CLAMS. The first one is the Pimoroni Pico Audio Pack:
+I am testing two audio boards for CLAMS. The first one is the Pimoroni Pico Audio Pack:
 
-[Pimoroni Pico Audio Pack](https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971 "Pimoroni Pico Audio Pack")
+[Pimoroni Pico Audio Pack](https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971 "Pimoroni Pico Audio Pack web page")
 
 The store is in the United Kingdom but I've had good luck with their shipping.
 
@@ -112,27 +121,33 @@ The Decker has four expansion slots. The audio pack takes up one and you need to
 
 ### Waveshare Electronics Audio Expansion Module for Raspberry Pi Pico
 
-The second audio add-on I'm testing is the [Waveshare Electronics Audio Expansion Module.](https://www.waveshare.com/pico-audio.htm "Waveshare Electronics Audio Expansion Module. web page") The store is in China, so availability may be a challenge. I have some on order, so I can't give much more data.
+The second audio board I'm testing is the [Waveshare Electronics Audio Expansion Module.](https://www.waveshare.com/pico-audio.htm "Waveshare Electronics Audio Expansion Module. web page") The store is in China, so availability may be a challenge. I have some on order, so I can't give much more data.
 
-The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the interface with the Pico leaves a full set of open male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe.
+The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the hardware interface with the Pico leaves a full set of open Pico male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe; you don't need an expander.
 
 ## Software for the proof of concept
 
-The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running `zeptoforth` and the Pimoroni audio pack. Part of this goal is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico. I want to know how much audio I can make in real time with 24-bit samples at 48kHz with a single Pico.
+The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running `zeptoforth` and the Pimoroni audio pack. A large part of this effor is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico.
+
+Initially, I want to know how much audio I can make in real time with 24-bit samples at 48 kHz using a single Pico. I can't rule out dropping back to 16-bit / 44.1 kHz audio, multi-Pico configurations or both without this testing.
 
 The planned audio software includes:
 
--   audio hardware interface words
+-   audio hardware interface words, and
 
--   a direct sound synthesis signal generator
+-   a direct sound synthesis [@cordesses2004directa], [@cordesses2004directb] signal generator.
+
+At this early stage I probably won't need a real-time operating system capability.
 
 ## Target date for proof of concept
 
-I'm calling the proof of concept release v0.2.5. I've set the due date to March 17, 2023. I hope I'll have Waveshare devices here but the software probably won't be done by then.
+I'm calling the proof of concept release v0.2.5. I've set the due date to March 17, 2023. I expect to have Waveshare devices here but the software for them probably won't be done by then.
 
-Once I know what the audio constraints on a single Pico are, I'll re-scope the project. I'm not pre-disposed against a multiple-Pico architecture right now but I'd strongly prefer a one-to-one ratio of performers to Picos. At the current hardware prices quartets or maybe even octets of CLAMS rigs are quite feasible.
+Once I know what the audio constraints on a single Pico are, I'll re-scope the project. I'd strongly prefer a one-to-one ratio of performers to Picos. There is no hardware "Pico cluster" available as far as I know. Interconnecting multiple Picos adds complexity to the breadboarding process and printed circuit board design is way above my pay grade.
 
 ## But here's what I plan to build after the proof of concept ...
+
+Given that all of this could change after the proof of concept, here's the rest of the plan.
 
 ### First release (v0.5.0) - Software (low-level infrastructure)
 

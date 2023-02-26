@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="M. Edward (Ed) Borasky">
-<meta name="dcterms.date" content="2023-02-25">
+<meta name="dcterms.date" content="2023-02-26">
 
 <title>Command Line Algorithmic Music System (CLAMS) - A Man, A Plan, A Clam … er …</title>
 <style>
@@ -137,12 +137,22 @@ div.csl-indent {
     <div class="quarto-title column-body">
       <h1 class="title">A Man, A Plan, A Clam … er …</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">project-management</div>
-                <div class="quarto-category">microcontrollers</div>
+                <div class="quarto-category">ChucK</div>
+                <div class="quarto-category">digital-audio</div>
+                <div class="quarto-category">direct-digital-synthesis</div>
                 <div class="quarto-category">embedded-systems</div>
+                <div class="quarto-category">FORMULA</div>
                 <div class="quarto-category">forth</div>
+                <div class="quarto-category">HMSL</div>
+                <div class="quarto-category">live-coding</div>
+                <div class="quarto-category">microcontrollers</div>
+                <div class="quarto-category">news</div>
+                <div class="quarto-category">NUMULA</div>
+                <div class="quarto-category">pimoroni</div>
+                <div class="quarto-category">project-management</div>
+                <div class="quarto-category">raspberry-pi-debug-probe</div>
                 <div class="quarto-category">raspberry-pi-pico</div>
+                <div class="quarto-category">waveshare-electronics</div>
                 <div class="quarto-category">zeptoforth</div>
               </div>
                   </div>
@@ -161,7 +171,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 25, 2023</p>
+        <p class="date">February 26, 2023</p>
       </div>
     </div>
     
@@ -180,13 +190,15 @@ div.csl-indent {
 
 
 <blockquote class="blockquote">
-<p>“In the beginning, there was a plan,</p>
-<p>And then came the assumptions,</p>
-<p>And the assumptions were without form,</p>
-<p>And the plan without substance,</p>
-<p>And the darkness was upon the face of the workers,</p>
-<p>And they spoke among themselves saying, …”</p>
-<p>- unknown NSFW cubicle worker</p>
+<pre><code>"In the beginning, there was a plan,
+And then came the assumptions,
+And the assumptions were without form,
+And the plan without substance,
+
+"And the darkness was upon the face of the workers,
+And they spoke among themselves saying, ..."
+
+- unknown NSFW cubicle worker</code></pre>
 </blockquote>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
@@ -201,38 +213,49 @@ div.csl-indent {
 </section>
 <section id="clams-architecture" class="level3">
 <h3 class="anchored" data-anchor-id="clams-architecture">CLAMS architecture</h3>
-<p>CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as <a href="https://chuck.cs.princeton.edu/" title="CChucK website"><code>ChucK</code></a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> semantics with Forth syntax. There is a single syntax and semantics to describe every part of the music creation process.</p>
-<p>CLAMS consists of three sets of Forth words: - low-level words: real time digital synthesis and microcontroller audio - mid-level words: signal flow graph construction - high-level words: human interface for composition and live performance</p>
+<p>CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as <a href="https://chuck.cs.princeton.edu/" title="ChucK website"><code>ChucK</code></a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> semantics with Forth syntax. <strong><em>CLAMS will have a single syntax and semantics to describe every part of the music creation process:</em></strong></p>
+<ul>
+<li><p>the unit generators that make and process digital audio,</p></li>
+<li><p>the signal flow graphs that connect the unit generators, and</p></li>
+<li><p>the score a composer writes and the gestures a performer makes.</p></li>
+</ul>
+<p>Thus, CLAMS consists of three sets of Forth words:</p>
+<ul>
+<li><p>low-level words: real time digital synthesis and microcontroller audio,</p></li>
+<li><p>mid-level words: signal flow graph construction</p></li>
+<li><p>high-level words: human interface for composition and live performance</p></li>
+</ul>
 </section>
 <section id="inspirations-from-forth" class="level3">
 <h3 class="anchored" data-anchor-id="inspirations-from-forth">Inspirations from Forth</h3>
 <p>Although <code>ChucK</code> is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:</p>
 <ul>
-<li>Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on <a href="https://github.com/philburk/hmsl.git">GitHub</a> at <a href="https://github.com/philburk/hmsl.git" class="uri">https://github.com/philburk/hmsl.git</a>.</li>
-<li>FORMULA - FORth MUsic LAnguage. Formula <span class="citation" data-cites="andersonkiuvila1989">(<a href="#ref-andersonkiuvila1989" role="doc-biblioref">Anderson and Kuivila 1989</a>, @andersonkiuvila1991)</span> was a system designed for improvisation in real time. FORMULA has a successor written in Python called <a href="https://github.com/davidpanderson/Numula.git">NUMULA</a>, which is documented at <a href="https://github.com/davidpanderson/Numula/wiki" class="uri">https://github.com/davidpanderson/Numula/wiki</a>.</li>
+<li>Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on <a href="https://github.com/philburk/hmsl.git" title="HMSL on GitHub">GitHub</a> at <a href="https://github.com/philburk/hmsl.git" class="uri">https://github.com/philburk/hmsl.git</a>.</li>
+<li>FORMULA - FORth MUsic LAnguage. Formula <span class="citation" data-cites="andersonkiuvila1989">(<a href="#ref-andersonkiuvila1989" role="doc-biblioref">David P. Anderson and Kuivila 1989</a>)</span>, <span class="citation" data-cites="andersonkiuvila1991">(<a href="#ref-andersonkiuvila1991" role="doc-biblioref">D. P. Anderson and Kiuvila 1991</a>)</span> was a system designed for improvisation in real time. FORMULA has a successor written in Python called <a href="https://github.com/davidpanderson/Numula.git" title="NUMULA on GitHub">NUMULA</a>, which is documented at <a href="https://github.com/davidpanderson/Numula/wiki" class="uri">https://github.com/davidpanderson/Numula/wiki</a>.</li>
 </ul>
 </section>
 <section id="more-about-live-coding" class="level3">
 <h3 class="anchored" data-anchor-id="more-about-live-coding">More about live coding</h3>
-<p>You can find more about live coding from:</p>
+<p>You can find more about live coding from</p>
 <ul>
-<li><em>Live Coding: A User’s Manual</em> <span class="citation" data-cites="blackwell2022live">(<a href="#ref-blackwell2022live" role="doc-biblioref">Blackwell et al. 2022</a>)</span></li>
-<li><a href="https://toplap.org/" title="TOPLAP home page">The <strong>T</strong>emporal <strong>O</strong>rganisation for the <strong>P</strong>roliferation of <strong>L</strong>ive <strong>A</strong>udioVisual <strong>P</strong>rogramming (TOPLAP) home page</a></li>
-<li><a href="https://toplap.org/wiki/Main_Page" title="The TOPLAP Wiki">The TOPLAP Wiki</a></li>
-<li><a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding">All things live coding (Awesome Live Coding)</a></li>
+<li><em>Live Coding: A User’s Manual</em> <span class="citation" data-cites="blackwell2022live">(<a href="#ref-blackwell2022live" role="doc-biblioref">Blackwell et al. 2022</a>)</span>,</li>
+<li><a href="https://toplap.org/" title="TOPLAP home page">The <strong>T</strong>emporal <strong>O</strong>rganisation for the <strong>P</strong>roliferation of <strong>L</strong>ive <strong>A</strong>udioVisual <strong>P</strong>rogramming (TOPLAP) home page</a>,</li>
+<li><a href="https://toplap.org/wiki/Main_Page" title="The TOPLAP Wiki">The TOPLAP Wiki</a>,</li>
+<li><a href="https://toplap.org/wiki/ManifestoDraft" title="The TOPLAP Manifesto">The TOPLAP Manifesto</a>: “Obscurantism is dangerous. Show us your screens.” and</li>
+<li><a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding on GitHub">All things live coding (Awesome Live Coding)</a>.</li>
 </ul>
+<p>See, for example <a href="https://toplap.org/wiki/HistoricalPerformances" title="TOPLAP Historical Performances, 80s FORTH era">TOPLAP Historical Performances, 80s FORTH era</a> for some references to HMSL and to Ron Kuivila.</p>
 </section>
 </section>
-<section id="road-map" class="level2">
-<h2 class="anchored" data-anchor-id="road-map">Road Map</h2>
+<section id="building-clams---preliminary-road-map" class="level2">
+<h2 class="anchored" data-anchor-id="building-clams---preliminary-road-map">Building CLAMS - Preliminary Road Map</h2>
 <p>I have a preliminary road map to share with you. The plan is <strong><em>very</em></strong> preliminary for two reasons:</p>
 <ol type="1">
 <li>I have two other projects that compete with this one for attention. Normally my optimum active project count is two, since it’s rare that both will be blocked at the same time.</li>
-<li>This project involves hardware, and component availability is challenging.</li>
+<li>This project involves hardware, and component availability is … well … challenging.</li>
 </ol>
-<p>This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is not the starting point for CLAMS.</p>
-<p>I’m not a hardware hacker by any stretch of the imagination. I don’t even have a soldering station! CLAMS is open source. The code is licensed GPL-3.</p>
-<p>The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. if someone wants to build these and sell copies, that’s fine with me as long as they give me credit and give their users what I’m providing them here.</p>
+<p>This second reason is why I have inserted a proof-of-concept phase up front. I have a pretty good idea of what I would do if someone handed me working Raspberry Pi Pico audio hardware and well-documented sample code. That is <strong><em>not</em></strong> the starting point for CLAMS.</p>
+<p>I’m not a hardware hacker by any stretch of the imagination. I don’t even have a soldering station! CLAMS is open source. The code is licensed GPL-3. The documentation and any media I produce with CLAMS is licensed Creative Commons Attribution / Share-Alike. If someone wants to build CLAMS gizmos and sell them, that’s fine with me as long as they give me credit and give their users a copy of what I’m providing with CLAMS.</p>
 </section>
 <section id="hardware-for-the-proof-of-concept" class="level2">
 <h2 class="anchored" data-anchor-id="hardware-for-the-proof-of-concept">Hardware for the proof of concept</h2>
@@ -244,12 +267,12 @@ div.csl-indent {
 <p>You will also need a Raspberry Pi Debug Probe. Here’s the store locator link:</p>
 <p><a href="https://www.raspberrypi.com/products/debug-probe/" class="uri">https://www.raspberrypi.com/products/debug-probe/</a></p>
 <p>This is newly-announced and I don’t know about availablilty. I have four on order that I expect to be here next week. If you can’t get them, there is a workaround, which I’ll publish in a separate post.</p>
-<p>The reason you need this is that <code>zeptoforth</code> communicates with you via a serial connection, not USB. The debug probe connects to USB on one end and to the Raspberry Pi Pico on the other end and converts the serial data to USB signals a host computer recognizes as a serial port.</p>
+<p>The reason you need this is that <code>zeptoforth</code> communicates with a host computer via a serial connection, not USB. The debug probe connects a USB port on the host computer with a Raspberry Pi Pico serial port and translates the signals. The host computer sees a serial port over USB.</p>
 </section>
 <section id="pimoroni-pico-audio-pack-and-pico-omnibus-or-pico-decker" class="level3">
 <h3 class="anchored" data-anchor-id="pimoroni-pico-audio-pack-and-pico-omnibus-or-pico-decker">Pimoroni Pico Audio Pack and (Pico Omnibus or Pico Decker)</h3>
-<p>I am testing two audio add-ons for CLAMS. The first one is the Pimoroni Pico Audio Pack:</p>
-<p><a href="https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971" title="Pimoroni Pico Audio Pack">Pimoroni Pico Audio Pack</a></p>
+<p>I am testing two audio boards for CLAMS. The first one is the Pimoroni Pico Audio Pack:</p>
+<p><a href="https://shop.pimoroni.com/products/pico-audio-pack?variant=32369490853971" title="Pimoroni Pico Audio Pack web page">Pimoroni Pico Audio Pack</a></p>
 <p>The store is in the United Kingdom but I’ve had good luck with their shipping.</p>
 <p>Because the debug probe needs to connect directly to the serial pins on the Pico, you will also need either a <a href="https://shop.pimoroni.com/products/pico-omnibus" title="Pico Omnibus web page">Pico Omnibus</a> or a <a href="https://shop.pimoroni.com/products/pico-decker" title="Pico Decker web page">Pico Decker</a>.</p>
 <p>The Omnibus has two expansion slots. The audio pack will take up one, and you will need to leave the other one unused. That’s where you’ll connect the debug probe to the Pico serial port pins. I’ll post a picture as soon as the debug probes get here.</p>
@@ -257,26 +280,29 @@ div.csl-indent {
 </section>
 <section id="waveshare-electronics-audio-expansion-module-for-raspberry-pi-pico" class="level3">
 <h3 class="anchored" data-anchor-id="waveshare-electronics-audio-expansion-module-for-raspberry-pi-pico">Waveshare Electronics Audio Expansion Module for Raspberry Pi Pico</h3>
-<p>The second audio add-on I’m testing is the <a href="https://www.waveshare.com/pico-audio.htm" title="Waveshare Electronics Audio Expansion Module. web page">Waveshare Electronics Audio Expansion Module.</a> The store is in China, so availability may be a challenge. I have some on order, so I can’t give much more data.</p>
-<p>The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the interface with the Pico leaves a full set of open male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe.</p>
+<p>The second audio board I’m testing is the <a href="https://www.waveshare.com/pico-audio.htm" title="Waveshare Electronics Audio Expansion Module. web page">Waveshare Electronics Audio Expansion Module.</a> The store is in China, so availability may be a challenge. I have some on order, so I can’t give much more data.</p>
+<p>The Waveshare Electonics add-on appears to be more convenient than the Pimoroni pack. The documentation is better, it comes with speakers, and the hardware interface with the Pico leaves a full set of open Pico male header pins. This last part means you can use an ordinary breadboard to connect the serial port pins to the debug probe; you don’t need an expander.</p>
 </section>
 </section>
 <section id="software-for-the-proof-of-concept" class="level2">
 <h2 class="anchored" data-anchor-id="software-for-the-proof-of-concept">Software for the proof of concept</h2>
-<p>The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running <code>zeptoforth</code> and the Pimoroni audio pack. Part of this goal is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico. I want to know how much audio I can make in real time with 24-bit samples at 48kHz with a single Pico.</p>
+<p>The primary goal of the proof of concept is to make a sound - at least a 440 hz sine wave - with just a Raspberry Pi Pico running <code>zeptoforth</code> and the Pimoroni audio pack. A large part of this effor is finding out where the performance constraints are going to be for synthesizing audio in real time with a Raspberry Pi Pico.</p>
+<p>Initially, I want to know how much audio I can make in real time with 24-bit samples at 48 kHz using a single Pico. I can’t rule out dropping back to 16-bit / 44.1 kHz audio, multi-Pico configurations or both without this testing.</p>
 <p>The planned audio software includes:</p>
 <ul>
-<li><p>audio hardware interface words</p></li>
-<li><p>a direct sound synthesis signal generator</p></li>
+<li><p>audio hardware interface words, and</p></li>
+<li><p>a direct sound synthesis <span class="citation" data-cites="cordesses2004directa">(<a href="#ref-cordesses2004directa" role="doc-biblioref">Cordesses 2004a</a>)</span>, <span class="citation" data-cites="cordesses2004directb">(<a href="#ref-cordesses2004directb" role="doc-biblioref">Cordesses 2004b</a>)</span> signal generator.</p></li>
 </ul>
+<p>At this early stage I probably won’t need a real-time operating system capability.</p>
 </section>
 <section id="target-date-for-proof-of-concept" class="level2">
 <h2 class="anchored" data-anchor-id="target-date-for-proof-of-concept">Target date for proof of concept</h2>
-<p>I’m calling the proof of concept release v0.2.5. I’ve set the due date to March 17, 2023. I hope I’ll have Waveshare devices here but the software probably won’t be done by then.</p>
-<p>Once I know what the audio constraints on a single Pico are, I’ll re-scope the project. I’m not pre-disposed against a multiple-Pico architecture right now but I’d strongly prefer a one-to-one ratio of performers to Picos. At the current hardware prices quartets or maybe even octets of CLAMS rigs are quite feasible.</p>
+<p>I’m calling the proof of concept release v0.2.5. I’ve set the due date to March 17, 2023. I expect to have Waveshare devices here but the software for them probably won’t be done by then.</p>
+<p>Once I know what the audio constraints on a single Pico are, I’ll re-scope the project. I’d strongly prefer a one-to-one ratio of performers to Picos. There is no hardware “Pico cluster” available as far as I know. Interconnecting multiple Picos adds complexity to the breadboarding process and printed circuit board design is way above my pay grade.</p>
 </section>
 <section id="but-heres-what-i-plan-to-build-after-the-proof-of-concept" class="level2">
 <h2 class="anchored" data-anchor-id="but-heres-what-i-plan-to-build-after-the-proof-of-concept">But here’s what I plan to build after the proof of concept …</h2>
+<p>Given that all of this could change after the proof of concept, here’s the rest of the plan.</p>
 <section id="first-release-v0.5.0---software-low-level-infrastructure" class="level3">
 <h3 class="anchored" data-anchor-id="first-release-v0.5.0---software-low-level-infrastructure">First release (v0.5.0) - Software (low-level infrastructure)</h3>
 <ul>
@@ -309,11 +335,20 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-andersonkiuvila1991" class="csl-entry" role="doc-biblioentry">
+Anderson, D. P., and R. Kiuvila. 1991. <span>“<span class="nocase">Formula: a programming language for expressive computer music</span>.”</span> <em>IEEE Computer</em> 24 (7): 12–21. <a href="https://doi.org/10.1109/2.84829">https://doi.org/10.1109/2.84829</a>.
+</div>
 <div id="ref-andersonkiuvila1989" class="csl-entry" role="doc-biblioentry">
 Anderson, David P., and Ron Kuivila. 1989. <span>“Continuous Abstractions for Discrete Event Languages.”</span> <em>Computer Music Journal</em> 13 (3): 11–23. <a href="http://www.jstor.org/stable/3680007">http://www.jstor.org/stable/3680007</a>.
 </div>
 <div id="ref-blackwell2022live" class="csl-entry" role="doc-biblioentry">
 Blackwell, A. F., E. Cocker, G. Cox, A. McLean, and T. Magnusson. 2022. <em>Live Coding: A User’s Manual</em>. Software Studies. MIT Press.
+</div>
+<div id="ref-cordesses2004directa" class="csl-entry" role="doc-biblioentry">
+Cordesses, Lionel. 2004a. <span>“Direct Digital Synthesis: A Tool for Periodic Wave Generation (Part 1).”</span> <em>IEEE Signal Processing Magazine</em> 21 (4): 50–54.
+</div>
+<div id="ref-cordesses2004directb" class="csl-entry" role="doc-biblioentry">
+———. 2004b. <span>“Direct Digital Synthesis: A Tool for Periodic Wave Generation (Part 2).”</span> <em>IEEE Signal Processing Magazine</em> 21 (5): 110–12.
 </div>
 <div id="ref-salazar2014programming" class="csl-entry" role="doc-biblioentry">
 Salazar, S., A. Kapur, G. Wang, and P. Cook. 2014. <em>Programming for Musicians and Digital Artists: Creating Music with ChucK</em>. Manning.
