@@ -11,7 +11,7 @@ about:
 
 > "I've never seen a happy clam. In fact, most of them were really steamed." \~ M. Edward (Ed) Borasky
 
-## CLAMS overview
+## Overview
 
 CLAMS is a text-based interactive environment for composing and performing music on a [Raspberry Pi Pico H microcontroller board](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-and-pico-h "Raspberry Pi Pico Website"). This board costs about \$5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about \$18US as of 2023-02-11.
 
@@ -23,4 +23,46 @@ CLAMS is based on [Travis Bemann's *zeptoforth*](https://github.com/tabemann/zep
 
 If you're already a Forth programmer, the *zeptoforth* words are documented at [https://github.com/tabemann/zeptoforth/tree/master/html (HTML)](https://github.com/tabemann/zeptoforth/tree/master/html "zeptoforth HTML word list") and [https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB)](https://github.com/tabemann/zeptoforth/tree/master/epub "zeptoforth EPUB word list"). For more details, see the [*zeptoforth* wiki](https://github.com/tabemann/zeptoforth/wiki "zeptoforth wiki").
 
-## References
+## Goal
+
+-   algorithmic music composition and performance ...
+-   live ...
+-   in real time ...
+-   on a Raspberry Pi Pico!
+
+## Architecture
+
+CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as [`ChucK`](https://chuck.cs.princeton.edu/ "ChucK website") [@salazar2014programming] semantics with Forth syntax. ***CLAMS will have a single syntax and semantics to describe every part of the music creation process:***
+
+-   the unit generators that make and process digital audio,
+
+-   the signal flow graphs that connect the unit generators, and
+
+-   the score a composer writes and the gestures a performer makes.
+
+Thus, CLAMS consists of three sets of Forth words:
+
+-   low-level words: real time digital synthesis and microcontroller audio,
+
+-   mid-level words: signal flow graph construction
+
+-   high-level words: human interface for composition and live performance
+
+## Inspirations from previous Forth musical systems
+
+Although `ChucK` is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:
+
+-   Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on [GitHub](https://github.com/philburk/hmsl.git "HMSL on GitHub") at <https://github.com/philburk/hmsl.git>.
+-   FORMULA - FORth MUsic LAnguage. Formula [@andersonkiuvila1989], [@andersonkiuvila1991] was a system designed for improvisation in real time. FORMULA has a successor written in Python called [NUMULA](https://github.com/davidpanderson/Numula.git "NUMULA on GitHub"), which is documented at <https://github.com/davidpanderson/Numula/wiki>.
+
+## More about live coding
+
+You can find more about live coding from
+
+-   *Live Coding: A User's Manual* [@blackwell2022live],
+-   [The **T**emporal **O**rganisation for the **P**roliferation of **L**ive **A**udioVisual **P**rogramming (TOPLAP) home page](https://toplap.org/ "TOPLAP home page"),
+-   [The TOPLAP Wiki](https://toplap.org/wiki/Main_Page "The TOPLAP Wiki"),
+-   [The TOPLAP Manifesto](https://toplap.org/wiki/ManifestoDraft "The TOPLAP Manifesto"): "Obscurantism is dangerous. Show us your screens." and
+-   [All things live coding (Awesome Live Coding)](https://github.com/toplap/awesome-livecoding "Awesome Live Coding on GitHub").
+
+See, for example [TOPLAP Historical Performances, 80s FORTH era](https://toplap.org/wiki/HistoricalPerformances "TOPLAP Historical Performances, 80s FORTH era") for some references to HMSL and to Ron Kuivila.

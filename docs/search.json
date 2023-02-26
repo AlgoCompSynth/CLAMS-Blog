@@ -14,11 +14,39 @@
     "text": "“I’ve never seen a happy clam. In fact, most of them were really steamed.” ~ M. Edward (Ed) Borasky"
   },
   {
-    "objectID": "about-CLAMS.html#clams-overview",
-    "href": "about-CLAMS.html#clams-overview",
+    "objectID": "about-CLAMS.html#overview",
+    "href": "about-CLAMS.html#overview",
     "title": "About CLAMS",
-    "section": "CLAMS overview",
-    "text": "CLAMS overview\nCLAMS is a text-based interactive environment for composing and performing music on a Raspberry Pi Pico H microcontroller board. This board costs about $5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about $18US as of 2023-02-11.\nCLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.\nThe CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of ChucK (Salazar et al. 2014) - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for live coding / algorave performances.\nCLAMS is based on Travis Bemann’s zeptoforth. If you’re new to Forth and want to get started, Brodie (2022) is the place to start. There are a few PDF versions of Starting Forth on the web, but many are older versions. The one you want is the web version at https://www.forth.com/starting-forth/0-starting-forth/.\nIf you’re already a Forth programmer, the zeptoforth words are documented at https://github.com/tabemann/zeptoforth/tree/master/html (HTML) and https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB). For more details, see the zeptoforth wiki."
+    "section": "Overview",
+    "text": "Overview\nCLAMS is a text-based interactive environment for composing and performing music on a Raspberry Pi Pico H microcontroller board. This board costs about $5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about $18US as of 2023-02-11.\nCLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.\nThe CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of ChucK (Salazar et al. 2014) - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for live coding / algorave performances.\nCLAMS is based on Travis Bemann’s zeptoforth. If you’re new to Forth and want to get started, Brodie (2022) is the place to start. There are a few PDF versions of Starting Forth on the web, but many are older versions. The one you want is the web version at https://www.forth.com/starting-forth/0-starting-forth/.\nIf you’re already a Forth programmer, the zeptoforth words are documented at https://github.com/tabemann/zeptoforth/tree/master/html (HTML) and https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB). For more details, see the zeptoforth wiki."
+  },
+  {
+    "objectID": "about-CLAMS.html#goal",
+    "href": "about-CLAMS.html#goal",
+    "title": "About CLAMS",
+    "section": "Goal",
+    "text": "Goal\n\nalgorithmic music composition and performance …\nlive …\nin real time …\non a Raspberry Pi Pico!"
+  },
+  {
+    "objectID": "about-CLAMS.html#architecture",
+    "href": "about-CLAMS.html#architecture",
+    "title": "About CLAMS",
+    "section": "Architecture",
+    "text": "Architecture\nCLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as ChucK (Salazar et al. 2014) semantics with Forth syntax. CLAMS will have a single syntax and semantics to describe every part of the music creation process:\n\nthe unit generators that make and process digital audio,\nthe signal flow graphs that connect the unit generators, and\nthe score a composer writes and the gestures a performer makes.\n\nThus, CLAMS consists of three sets of Forth words:\n\nlow-level words: real time digital synthesis and microcontroller audio,\nmid-level words: signal flow graph construction\nhigh-level words: human interface for composition and live performance"
+  },
+  {
+    "objectID": "about-CLAMS.html#inspirations-from-previous-forth-musical-systems",
+    "href": "about-CLAMS.html#inspirations-from-previous-forth-musical-systems",
+    "title": "About CLAMS",
+    "section": "Inspirations from previous Forth musical systems",
+    "text": "Inspirations from previous Forth musical systems\nAlthough ChucK is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:\n\nHierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on GitHub at https://github.com/philburk/hmsl.git.\nFORMULA - FORth MUsic LAnguage. Formula (David P. Anderson and Kuivila 1989), (D. P. Anderson and Kiuvila 1991) was a system designed for improvisation in real time. FORMULA has a successor written in Python called NUMULA, which is documented at https://github.com/davidpanderson/Numula/wiki."
+  },
+  {
+    "objectID": "about-CLAMS.html#more-about-live-coding",
+    "href": "about-CLAMS.html#more-about-live-coding",
+    "title": "About CLAMS",
+    "section": "More about live coding",
+    "text": "More about live coding\nYou can find more about live coding from\n\nLive Coding: A User’s Manual (Blackwell et al. 2022),\nThe Temporal Organisation for the Proliferation of Live AudioVisual Programming (TOPLAP) home page,\nThe TOPLAP Wiki,\nThe TOPLAP Manifesto: “Obscurantism is dangerous. Show us your screens.” and\nAll things live coding (Awesome Live Coding).\n\nSee, for example TOPLAP Historical Performances, 80s FORTH era for some references to HMSL and to Ron Kuivila."
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -33,13 +61,6 @@
     "title": "A Man, A Plan, A Clam … er …",
     "section": "",
     "text": "\"In the beginning, there was a plan,\nAnd then came the assumptions,\nAnd the assumptions were without form,\nAnd the plan without substance,\n\n\"And the darkness was upon the face of the workers,\nAnd they spoke among themselves saying, ...\"\n\n- unknown NSFW cubicle worker"
-  },
-  {
-    "objectID": "posts/proof-of-concept-plan/index.html#overview",
-    "href": "posts/proof-of-concept-plan/index.html#overview",
-    "title": "A Man, A Plan, A Clam … er …",
-    "section": "Overview",
-    "text": "Overview\n\nCLAMS goal\n\nalgorithmic music composition and performance …\nlive …\nin real time …\non a Raspberry Pi Pico!\n\n\n\nCLAMS architecture\nCLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as ChucK (Salazar et al. 2014) semantics with Forth syntax. CLAMS will have a single syntax and semantics to describe every part of the music creation process:\n\nthe unit generators that make and process digital audio,\nthe signal flow graphs that connect the unit generators, and\nthe score a composer writes and the gestures a performer makes.\n\nThus, CLAMS consists of three sets of Forth words:\n\nlow-level words: real time digital synthesis and microcontroller audio,\nmid-level words: signal flow graph construction\nhigh-level words: human interface for composition and live performance\n\n\n\nInspirations from Forth\nAlthough ChucK is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:\n\nHierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on GitHub at https://github.com/philburk/hmsl.git.\nFORMULA - FORth MUsic LAnguage. Formula (David P. Anderson and Kuivila 1989), (D. P. Anderson and Kiuvila 1991) was a system designed for improvisation in real time. FORMULA has a successor written in Python called NUMULA, which is documented at https://github.com/davidpanderson/Numula/wiki.\n\n\n\nMore about live coding\nYou can find more about live coding from\n\nLive Coding: A User’s Manual (Blackwell et al. 2022),\nThe Temporal Organisation for the Proliferation of Live AudioVisual Programming (TOPLAP) home page,\nThe TOPLAP Wiki,\nThe TOPLAP Manifesto: “Obscurantism is dangerous. Show us your screens.” and\nAll things live coding (Awesome Live Coding).\n\nSee, for example TOPLAP Historical Performances, 80s FORTH era for some references to HMSL and to Ron Kuivila."
   },
   {
     "objectID": "posts/proof-of-concept-plan/index.html#building-clams---preliminary-road-map",
@@ -74,7 +95,7 @@
     "href": "posts/proof-of-concept-plan/index.html#but-heres-what-i-plan-to-build-after-the-proof-of-concept",
     "title": "A Man, A Plan, A Clam … er …",
     "section": "But here’s what I plan to build after the proof of concept …",
-    "text": "But here’s what I plan to build after the proof of concept …\nGiven that all of this could change after the proof of concept, here’s the rest of the plan.\n\nFirst release (v0.5.0) - Software (low-level infrastructure)\n\nall real-time synthesis / audio I/O words working\nstretch goal is all synthesis algorithms in Csound 7\n\nhttps://flossmanual.csound.com/\n\ntarget date: 2023-05-12\n\n\n\nSecond release (v0.7.5) (mid-level user interface)\n\nsignal flow graph interpreter\ntarget date: 2023-06-16\n\n\n\nFull release (v0.9.0+) (high-level user interface)\n\nfull composition and live performance user interface\nstretch goal: port to Electro-Smith Daisy\ntarget date: 2023-07-14"
+    "text": "But here’s what I plan to build after the proof of concept …\nGiven that all of this could change after the proof of concept, here’s the rest of the plan.\n\nFirst release (v0.5.0) - Software (low-level infrastructure)\n\nall real-time synthesis / audio I/O words working\nstretch goal is all synthesis algorithms in Csound 7\n\nCsound 7 FLOSS Manual\n\ntarget date: 2023-05-12\n\n\n\nSecond release (v0.7.5) (mid-level user interface)\n\nsignal flow graph interpreter\ntarget date: 2023-06-16\n\n\n\nFull release (v0.9.0+) (high-level user interface)\n\nfull composition and live performance user interface\nstretch goal: port to Electro-Smith Daisy\ntarget date: 2023-07-14"
   },
   {
     "objectID": "index.html",

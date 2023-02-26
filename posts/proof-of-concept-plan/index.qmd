@@ -30,52 +30,6 @@ share:
 >
 >     - unknown NSFW cubicle worker
 
-## Overview
-
-### CLAMS goal
-
--   algorithmic music composition and performance ...
--   live ...
--   in real time ...
--   on a Raspberry Pi Pico!
-
-### CLAMS architecture
-
-CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as [`ChucK`](https://chuck.cs.princeton.edu/ "ChucK website") [@salazar2014programming] semantics with Forth syntax. ***CLAMS will have a single syntax and semantics to describe every part of the music creation process:***
-
--   the unit generators that make and process digital audio,
-
--   the signal flow graphs that connect the unit generators, and
-
--   the score a composer writes and the gestures a performer makes.
-
-Thus, CLAMS consists of three sets of Forth words:
-
--   low-level words: real time digital synthesis and microcontroller audio,
-
--   mid-level words: signal flow graph construction
-
--   high-level words: human interface for composition and live performance
-
-### Inspirations from Forth
-
-Although `ChucK` is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:
-
--   Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on [GitHub](https://github.com/philburk/hmsl.git "HMSL on GitHub") at <https://github.com/philburk/hmsl.git>.
--   FORMULA - FORth MUsic LAnguage. Formula [@andersonkiuvila1989], [@andersonkiuvila1991] was a system designed for improvisation in real time. FORMULA has a successor written in Python called [NUMULA](https://github.com/davidpanderson/Numula.git "NUMULA on GitHub"), which is documented at <https://github.com/davidpanderson/Numula/wiki>.
-
-### More about live coding
-
-You can find more about live coding from
-
--   *Live Coding: A User's Manual* [@blackwell2022live],
--   [The **T**emporal **O**rganisation for the **P**roliferation of **L**ive **A**udioVisual **P**rogramming (TOPLAP) home page](https://toplap.org/ "TOPLAP home page"),
--   [The TOPLAP Wiki](https://toplap.org/wiki/Main_Page "The TOPLAP Wiki"),
--   [The TOPLAP Manifesto](https://toplap.org/wiki/ManifestoDraft "The TOPLAP Manifesto"): "Obscurantism is dangerous. Show us your screens." and
--   [All things live coding (Awesome Live Coding)](https://github.com/toplap/awesome-livecoding "Awesome Live Coding on GitHub").
-
-See, for example [TOPLAP Historical Performances, 80s FORTH era](https://toplap.org/wiki/HistoricalPerformances "TOPLAP Historical Performances, 80s FORTH era") for some references to HMSL and to Ron Kuivila.
-
 ## Building CLAMS - Preliminary Road Map
 
 I have a preliminary road map to share with you. The plan is ***very*** preliminary for two reasons:
@@ -153,7 +107,7 @@ Given that all of this could change after the proof of concept, here's the rest 
 
 -   all real-time synthesis / audio I/O words working
 -   stretch goal is all synthesis algorithms in Csound 7
-    -   <https://flossmanual.csound.com/>
+    -   [Csound 7 FLOSS Manual](https://flossmanual.csound.com/Csound 7 "Csound 7 FLOSS Manual"){.uri}
 -   target date: 2023-05-12
 
 ### Second release (v0.7.5) (mid-level user interface)

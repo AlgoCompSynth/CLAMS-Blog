@@ -146,21 +146,71 @@ div.csl-indent {
 <blockquote class="blockquote">
 <p>“I’ve never seen a happy clam. In fact, most of them were really steamed.” ~ M. Edward (Ed) Borasky</p>
 </blockquote>
-<section id="clams-overview" class="level2">
-<h2 data-anchor-id="clams-overview">CLAMS overview</h2>
+<section id="overview" class="level2">
+<h2 data-anchor-id="overview">Overview</h2>
 <p>CLAMS is a text-based interactive environment for composing and performing music on a <a href="https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-and-pico-h" title="Raspberry Pi Pico Website">Raspberry Pi Pico H microcontroller board</a>. This board costs about $5US and includes soldered male headers and a debug connector. The initial release of CLAMS uses a Pimoroni Pico Audio Pack for audio output. The audio pack provides stereo headphone and line outputs, and costs about $18US as of 2023-02-11.</p>
 <p>CLAMS is a domain-specific language built on a Forth real-time operating system / interpreter. The user connects to the board from a command line on a host computer and enters CLAMS code interactively.</p>
 <p>The CLAMS language is designed to facilitate live coding. Using a mixture of pre-compiled code and real-time directives, the user creates a performance in real time. The philosophy of CLAMS is similar to that of <a href="https://chuck.stanford.edu/" title="ChucK Home Page">ChucK</a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> - a single text-based language to implement both the definitions of synthesized instruments and the sequences of sounds they make, intended for <a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding :ist on GitHub">live coding / algorave</a> performances.</p>
 <p>CLAMS is based on <a href="https://github.com/tabemann/zeptoforth" title="zeptoforth on GitHub">Travis Bemann’s <em>zeptoforth</em></a>. If you’re new to Forth and want to get started, <span class="citation" data-cites="brodie2022">Brodie (<a href="#ref-brodie2022" role="doc-biblioref">2022</a>)</span> is the place to start. There are a few PDF versions of <em>Starting Forth</em> on the web, but many are older versions. The one you want is the web version at <a href="https://www.forth.com/starting-forth/0-starting-forth/" class="uri">https://www.forth.com/starting-forth/0-starting-forth/</a>.</p>
 <p>If you’re already a Forth programmer, the <em>zeptoforth</em> words are documented at <a href="https://github.com/tabemann/zeptoforth/tree/master/html" title="zeptoforth HTML word list">https://github.com/tabemann/zeptoforth/tree/master/html (HTML)</a> and <a href="https://github.com/tabemann/zeptoforth/tree/master/epub" title="zeptoforth EPUB word list">https://github.com/tabemann/zeptoforth/tree/master/epub (EPUB)</a>. For more details, see the <a href="https://github.com/tabemann/zeptoforth/wiki" title="zeptoforth wiki"><em>zeptoforth</em> wiki</a>.</p>
 </section>
-<section id="references" class="level2">
-
+<section id="goal" class="level2">
+<h2 data-anchor-id="goal">Goal</h2>
+<ul>
+<li>algorithmic music composition and performance …</li>
+<li>live …</li>
+<li>in real time …</li>
+<li>on a Raspberry Pi Pico!</li>
+</ul>
+</section>
+<section id="architecture" class="level2">
+<h2 data-anchor-id="architecture">Architecture</h2>
+<p>CLAMS is a domain-specific language implemented in Forth. Conceptually, you can think of CLAMS as <a href="https://chuck.cs.princeton.edu/" title="ChucK website"><code>ChucK</code></a> <span class="citation" data-cites="salazar2014programming">(<a href="#ref-salazar2014programming" role="doc-biblioref">Salazar et al. 2014</a>)</span> semantics with Forth syntax. <strong><em>CLAMS will have a single syntax and semantics to describe every part of the music creation process:</em></strong></p>
+<ul>
+<li><p>the unit generators that make and process digital audio,</p></li>
+<li><p>the signal flow graphs that connect the unit generators, and</p></li>
+<li><p>the score a composer writes and the gestures a performer makes.</p></li>
+</ul>
+<p>Thus, CLAMS consists of three sets of Forth words:</p>
+<ul>
+<li><p>low-level words: real time digital synthesis and microcontroller audio,</p></li>
+<li><p>mid-level words: signal flow graph construction</p></li>
+<li><p>high-level words: human interface for composition and live performance</p></li>
+</ul>
+</section>
+<section id="inspirations-from-previous-forth-musical-systems" class="level2">
+<h2 data-anchor-id="inspirations-from-previous-forth-musical-systems">Inspirations from previous Forth musical systems</h2>
+<p>Although <code>ChucK</code> is the primary inspiration for CLAMS, two early musical systems that used Forth are also inspirations:</p>
+<ul>
+<li>Hierarchical Music Specification Language (HMSL). HMSL has a long history and experience with experimental composers, and is currently being actively enhanced! HMSL is on <a href="https://github.com/philburk/hmsl.git" title="HMSL on GitHub">GitHub</a> at <a href="https://github.com/philburk/hmsl.git" class="uri">https://github.com/philburk/hmsl.git</a>.</li>
+<li>FORMULA - FORth MUsic LAnguage. Formula <span class="citation" data-cites="andersonkiuvila1989">(<a href="#ref-andersonkiuvila1989" role="doc-biblioref">David P. Anderson and Kuivila 1989</a>)</span>, <span class="citation" data-cites="andersonkiuvila1991">(<a href="#ref-andersonkiuvila1991" role="doc-biblioref">D. P. Anderson and Kiuvila 1991</a>)</span> was a system designed for improvisation in real time. FORMULA has a successor written in Python called <a href="https://github.com/davidpanderson/Numula.git" title="NUMULA on GitHub">NUMULA</a>, which is documented at <a href="https://github.com/davidpanderson/Numula/wiki" class="uri">https://github.com/davidpanderson/Numula/wiki</a>.</li>
+</ul>
+</section>
+<section id="more-about-live-coding" class="level2">
+<h2 data-anchor-id="more-about-live-coding">More about live coding</h2>
+<p>You can find more about live coding from</p>
+<ul>
+<li><em>Live Coding: A User’s Manual</em> <span class="citation" data-cites="blackwell2022live">(<a href="#ref-blackwell2022live" role="doc-biblioref">Blackwell et al. 2022</a>)</span>,</li>
+<li><a href="https://toplap.org/" title="TOPLAP home page">The <strong>T</strong>emporal <strong>O</strong>rganisation for the <strong>P</strong>roliferation of <strong>L</strong>ive <strong>A</strong>udioVisual <strong>P</strong>rogramming (TOPLAP) home page</a>,</li>
+<li><a href="https://toplap.org/wiki/Main_Page" title="The TOPLAP Wiki">The TOPLAP Wiki</a>,</li>
+<li><a href="https://toplap.org/wiki/ManifestoDraft" title="The TOPLAP Manifesto">The TOPLAP Manifesto</a>: “Obscurantism is dangerous. Show us your screens.” and</li>
+<li><a href="https://github.com/toplap/awesome-livecoding" title="Awesome Live Coding on GitHub">All things live coding (Awesome Live Coding)</a>.</li>
+</ul>
+<p>See, for example <a href="https://toplap.org/wiki/HistoricalPerformances" title="TOPLAP Historical Performances, 80s FORTH era">TOPLAP Historical Performances, 80s FORTH era</a> for some references to HMSL and to Ron Kuivila.</p>
 
 
 
 </section>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-andersonkiuvila1991" class="csl-entry" role="doc-biblioentry">
+Anderson, D. P., and R. Kiuvila. 1991. <span>“<span class="nocase">Formula: a programming language for expressive computer music</span>.”</span> <em>IEEE Computer</em> 24 (7): 12–21. <a href="https://doi.org/10.1109/2.84829">https://doi.org/10.1109/2.84829</a>.
+</div>
+<div id="ref-andersonkiuvila1989" class="csl-entry" role="doc-biblioentry">
+Anderson, David P., and Ron Kuivila. 1989. <span>“Continuous Abstractions for Discrete Event Languages.”</span> <em>Computer Music Journal</em> 13 (3): 11–23. <a href="http://www.jstor.org/stable/3680007">http://www.jstor.org/stable/3680007</a>.
+</div>
+<div id="ref-blackwell2022live" class="csl-entry" role="doc-biblioentry">
+Blackwell, A. F., E. Cocker, G. Cox, A. McLean, and T. Magnusson. 2022. <em>Live Coding: A User’s Manual</em>. Software Studies. MIT Press.
+</div>
 <div id="ref-brodie2022" class="csl-entry" role="doc-biblioentry">
 Brodie, Leo. 2022. <span>“Starting Forth.”</span> FORTH, Inc. <a href="https://www.forth.com/starting-forth/0-starting-forth/">https://www.forth.com/starting-forth/0-starting-forth/</a>.
 </div>
