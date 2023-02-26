@@ -7,7 +7,10 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
-  feed: true
+  feed: 
+    title: CLAMS Blog RSS Feed
+    type: partial
+    items: 10
 page-layout: full
 title-block-banner: true
 ---
