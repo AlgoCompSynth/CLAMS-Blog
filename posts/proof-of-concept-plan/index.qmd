@@ -89,7 +89,7 @@ The planned audio software includes:
 
 -   audio hardware interface words, and
 
--   a direct sound synthesis [@cordesses2004directa], [@cordesses2004directb] signal generator.
+-   a direct sound synthesis [@cordesses2004directa], [@cordesses2004directb], [@8814244] signal generator.
 
 At this early stage I probably won't need a real-time operating system capability.
 
@@ -107,7 +107,7 @@ Given that all of this could change after the proof of concept, here's the rest 
 
 -   all real-time synthesis / audio I/O words working
 -   stretch goal is all synthesis algorithms in Csound 7
-    -   [Csound 7 FLOSS Manual](https://flossmanual.csound.com/Csound 7 "Csound 7 FLOSS Manual"){.uri}
+    -   [Csound 7 FLOSS Manual](https://flossmanual.csound.com/Csound%207 "Csound 7 FLOSS Manual"){.uri}
 -   target date: 2023-05-12
 
 ### Second release (v0.7.5) (mid-level user interface)
