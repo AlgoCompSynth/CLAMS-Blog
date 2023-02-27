@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>CLAMS Blog RSS Feed</title>
+<link>https://algocompsynth.github.io/CLAMS-Blog/index.html</link>
+<atom:link href="https://algocompsynth.github.io/CLAMS-Blog/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.2.335</generator>
+<lastBuildDate>Sun, 26 Feb 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Man, A Plan, A Clam … er …</title>
+  <dc:creator>M. Edward (Ed) Borasky</dc:creator>
+  <link>https://algocompsynth.github.io/CLAMS-Blog/posts/proof-of-concept-plan/index.html</link>
+  <description><![CDATA[ I have a preliminary road map to share with you. The plan is <strong><em>very</em></strong> preliminary for two reasons: ]]></description>
+  <category>ChucK</category>
+  <category>digital-audio</category>
+  <category>direct-digital-synthesis</category>
+  <category>embedded-systems</category>
+  <category>FORMULA</category>
+  <category>forth</category>
+  <category>HMSL</category>
+  <category>live-coding</category>
+  <category>microcontrollers</category>
+  <category>news</category>
+  <category>NUMULA</category>
+  <category>pimoroni</category>
+  <category>project-management</category>
+  <category>raspberry-pi-debug-probe</category>
+  <category>raspberry-pi-pico</category>
+  <category>waveshare-electronics</category>
+  <category>zeptoforth</category>
+  <guid>https://algocompsynth.github.io/CLAMS-Blog/posts/proof-of-concept-plan/index.html</guid>
+  <pubDate>Sun, 26 Feb 2023 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Welcome To the CLAMS Blog</title>
+  <dc:creator>M. Edward (Ed) Borasky</dc:creator>
+  <link>https://algocompsynth.github.io/CLAMS-Blog/posts/welcome/index.html</link>
+  <description><![CDATA[ Welcome to the <a href="https://github.com/AlgoCompSynth/CLAMS" title="CLAMS on GitHub">CLAMS</a> blog! This is where I’ll be thinking out loud about the project and sharing progress. There will be formal documentation as well, but I haven’t gotten far enough into the project to lay that out in any great detail. ]]></description>
+  <category>news</category>
+  <category>microcontrollers</category>
+  <category>live-coding</category>
+  <category>embedded-systems</category>
+  <category>forth</category>
+  <category>digital-signal-processing</category>
+  <category>algorithmic-composition</category>
+  <category>algorave</category>
+  <category>raspberry-pi-pico</category>
+  <category>zeptoforth</category>
+  <guid>https://algocompsynth.github.io/CLAMS-Blog/posts/welcome/index.html</guid>
+  <pubDate>Sun, 12 Feb 2023 08:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
