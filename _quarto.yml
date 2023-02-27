@@ -11,8 +11,6 @@ website:
     right:
       - about-CLAMS.qmd
       - about.qmd
-      - icon: rss
-        href: index.xml
       - icon: github
         href: https://github.com/AlgoCompSynth/CLAMS
       - icon: mastodon
