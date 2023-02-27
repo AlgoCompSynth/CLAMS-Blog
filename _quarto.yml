@@ -17,6 +17,8 @@ website:
         href: https://ravenation.club/@AlgoCompSynth
       - icon: linkedin
         href: https://www.linkedin.com/in/znmeb/
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme: darkly
