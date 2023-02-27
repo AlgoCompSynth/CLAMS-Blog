@@ -1,0 +1,26 @@
+---
+title: "Standing on the Shoulders of Giants"
+author: "M. Edward (Ed) Borasky"
+date: "2023-02-26"
+categories: [ChucK, digital-audio, direct-digital-synthesis, embedded-systems, FORMULA, forth, HMSL, live-coding, microcontrollers, news, NUMULA, pimoroni, project-management, raspberry-pi-debug-probe, raspberry-pi-pico, waveshare-electronics, zeptoforth]
+draft: true
+bibliography: ../../CLAMS.bib
+filters:
+  - social-share
+share:
+  permalink: "https://algocompsynth.github.io/CLAMS-Blog/posts/shoulders-of-giants/"
+  description: "A brief history of Forth in music performance"
+  twitter: false
+  facebook: false
+  reddit: false
+  stumble: false
+  tumblr: false
+  linkedin: true
+  email: false
+  mastodon: true
+---
+
+> "How many people can stand on the shoulders of a giant before the giant collapses?"
+> - M. Edward (Ed) Borasky
+
+## 
