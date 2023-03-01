@@ -98,10 +98,17 @@
     "text": "But here’s what I plan to build after the proof of concept …\nGiven that all of this could change after the proof of concept, here’s the rest of the plan.\n\nFirst release (v0.5.0) - Software (low-level infrastructure)\n\nall real-time synthesis / audio I/O words working\nstretch goal is all synthesis algorithms in Csound 7\n\nCsound 7 FLOSS Manual\n\ntarget date: 2023-05-12\n\n\n\nSecond release (v0.7.5) (mid-level user interface)\n\nsignal flow graph interpreter\ntarget date: 2023-06-16\n\n\n\nFull release (v0.9.0+) (high-level user interface)\n\nfull composition and live performance user interface\nstretch goal: port to Electro-Smith Daisy\ntarget date: 2023-07-14"
   },
   {
+    "objectID": "posts/moving-to-main-blog/index.html",
+    "href": "posts/moving-to-main-blog/index.html",
+    "title": "Moving to My Main Blog",
+    "section": "",
+    "text": "“Entia non sunt multiplicanda praeter necessitatem” - William of Ockham\n“Today in history 1324: William of Ockham shaves every man in Ockham who does not shave himself.” - M. Edward (Ed) Borasky\n\nI have migrated the few posts on this blog to my main blog, AlgoCompSynth by znmeb. That Ockham fellow had a pretty good idea; I wish I had listened to him.\nI’ll be posting CLAMS updates over there from now on. You’ll find them at https://www.algocompsynth.com/#category:CLAMS. I’ll set up a re-direct in a week or so, as soon as I figure out how to get GitHub Pages to do it."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Command Line Algorithmic Music System (CLAMS)",
     "section": "",
-    "text": "A Man, A Plan, A Clam … er …\n\n\n\n\n\n\n\nChucK\n\n\ndigital-audio\n\n\ndirect-digital-synthesis\n\n\nembedded-systems\n\n\nFORMULA\n\n\nforth\n\n\nHMSL\n\n\nlive-coding\n\n\nmicrocontrollers\n\n\nnews\n\n\nNUMULA\n\n\npimoroni\n\n\nproject-management\n\n\nraspberry-pi-debug-probe\n\n\nraspberry-pi-pico\n\n\nwaveshare-electronics\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\n\n\nWelcome To the CLAMS Blog\n\n\n\n\n\n\n\nnews\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
+    "text": "Moving to My Main Blog\n\n\n\n\n\n\n\nCLAMS\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\n\n\nA Man, A Plan, A Clam … er …\n\n\n\n\n\n\n\nChucK\n\n\ndigital-audio\n\n\ndirect-digital-synthesis\n\n\nembedded-systems\n\n\nFORMULA\n\n\nforth\n\n\nHMSL\n\n\nlive-coding\n\n\nmicrocontrollers\n\n\nnews\n\n\nNUMULA\n\n\npimoroni\n\n\nproject-management\n\n\nraspberry-pi-debug-probe\n\n\nraspberry-pi-pico\n\n\nwaveshare-electronics\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 26, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\n\n\nWelcome To the CLAMS Blog\n\n\n\n\n\n\n\nnews\n\n\nmicrocontrollers\n\n\nlive-coding\n\n\nembedded-systems\n\n\nforth\n\n\ndigital-signal-processing\n\n\nalgorithmic-composition\n\n\nalgorave\n\n\nraspberry-pi-pico\n\n\nzeptoforth\n\n\n\n\n\n\n\n\n\n\n\nFeb 12, 2023\n\n\nM. Edward (Ed) Borasky\n\n\n\n\n\n\nNo matching items"
   }
 ]

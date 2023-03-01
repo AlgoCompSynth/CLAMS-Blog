@@ -10,7 +10,16 @@
 <atom:link href="https://algocompsynth.github.io/CLAMS-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.2.335</generator>
-<lastBuildDate>Sun, 26 Feb 2023 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Feb 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Moving to My Main Blog</title>
+  <dc:creator>M. Edward (Ed) Borasky</dc:creator>
+  <link>https://algocompsynth.github.io/CLAMS-Blog/posts/moving-to-main-blog/index.html</link>
+  <description><![CDATA[ “<em>Entia non sunt multiplicanda praeter necessitatem</em>” - William of Ockham ]]></description>
+  <category>CLAMS</category>
+  <guid>https://algocompsynth.github.io/CLAMS-Blog/posts/moving-to-main-blog/index.html</guid>
+  <pubDate>Tue, 28 Feb 2023 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>A Man, A Plan, A Clam … er …</title>
   <dc:creator>M. Edward (Ed) Borasky</dc:creator>

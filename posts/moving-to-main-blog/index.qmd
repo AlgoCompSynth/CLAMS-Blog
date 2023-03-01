@@ -1,0 +1,29 @@
+---
+title: "Moving to My Main Blog"
+author: "M. Edward (Ed) Borasky"
+date: "2023-02-28"
+categories: [CLAMS]
+draft: false
+bibliography: ../../CLAMS.bib
+filters:
+  - social-share
+share:
+  permalink: "https://algocompsynth.github.io/CLAMS-Blog/posts/moving-to-main-blog/"
+  description: "Merging this blog into my main blog"
+  twitter: false
+  facebook: false
+  reddit: false
+  stumble: false
+  tumblr: false
+  linkedin: true
+  email: false
+  mastodon: true
+---
+
+> "*Entia non sunt multiplicanda praeter necessitatem*" - William of Ockham
+>
+> "Today in history 1324: William of Ockham shaves every man in Ockham who does not shave himself." - M. Edward (Ed) Borasky
+
+I have migrated the few posts on this blog to my main blog, [AlgoCompSynth by znmeb](https://www.algocompsynth.com/ "AlgoCompSynth by znmeb"). That Ockham fellow had a pretty good idea; I wish I had listened to him.
+
+I'll be posting CLAMS updates over there from now on. You'll find them at <https://www.algocompsynth.com/#category:CLAMS>. I'll set up a re-direct in a week or so, as soon as I figure out how to get GitHub Pages to do it.
